@@ -4,7 +4,7 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              x:Class="SiwakeApp.Views.QuestionPage"
              ItemsSource="{Binding CurrentQuestionList}"
-             SelectedItem="{Binding CurrentQuestionPage}">
+             SelectedItem="{Binding CurrentQuestionPage}" Title="{Binding QuestionPageName}">
     <CarouselPage.ItemTemplate>
         <DataTemplate>
             <ContentPage>

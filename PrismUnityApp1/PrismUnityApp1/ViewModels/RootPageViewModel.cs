@@ -1,6 +1,7 @@
 ﻿using Prism.Mvvm;
 using Prism.Navigation;
 using System.Collections.ObjectModel;
+using Xamarin.Forms;
 
 namespace SiwakeApp.ViewModels
 {
@@ -25,6 +26,12 @@ namespace SiwakeApp.ViewModels
             set { this.SetProperty(ref this.selectedItem, value);
                 CurrentQuestionList = new ObservableCollection<QuestionInfo>(selectedItem.Questions);
                 ResetPage();
+                if(Device.OS != TargetPlatform.Windows)
+                {
+                    StartPageName = selectedItem.SetName;
+                    QuestionPageName = selectedItem.SetName;
+                    ResultPageName = selectedItem.SetName + " 結果発表";
+                }
             }
         }
         public ObservableCollection<QuestionInfo> CurrentQuestionList { get; set; }
@@ -67,6 +74,29 @@ namespace SiwakeApp.ViewModels
             int index = CurrentQuestionList.IndexOf(CurrentQuestionPage);
             return index > 0;
         }
+
+        //ページタイトル
+        private string startPageName = "開始";
+        public string StartPageName
+        {
+            get { return startPageName; }
+            set { this.SetProperty(ref this.startPageName, value); }
+        }
+
+        private string questionPageName = "トレーニング";
+        public string QuestionPageName
+        {
+            get { return questionPageName; }
+            set { this.SetProperty(ref this.questionPageName, value); }
+        }
+
+        private string resultPageName = "結果発表";
+        public string ResultPageName
+        {
+            get { return resultPageName; }
+            set { this.SetProperty(ref this.resultPageName, value); }
+        }
+
 
         public RootPageViewModel(INavigationService navigationService)
         {

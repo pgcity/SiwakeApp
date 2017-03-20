@@ -4,18 +4,25 @@
              x:Class="SiwakeApp.Views.MenuPage"
              Title="Menu">
     <StackLayout>
-        <Label Text="Menu" 
+        <Frame BackgroundColor="#4CAF50">
+            <Label Text="簡単仕訳トレーニング" TextColor="#FFFFFF" 
            FontSize="18"
            Margin="10,36,0,5"/>
+        </Frame>
+
         <ListView ItemsSource="{Binding Menus}"
               VerticalOptions="FillAndExpand"
               ItemSelected="ListViewMenu_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Orientation="Horizontal">
+                        <StackLayout Orientation="Horizontal"
+                                     Margin="10,10,10,10">
                             <Label Text="{Binding SetName}"
-                     HorizontalOptions="FillAndExpand" />
+                                    HorizontalOptions="FillAndExpand" />
+                            <Label Text="{Binding Grade}"
+                                   HorizontalTextAlignment="End"
+                                    HorizontalOptions="FillAndExpand" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
