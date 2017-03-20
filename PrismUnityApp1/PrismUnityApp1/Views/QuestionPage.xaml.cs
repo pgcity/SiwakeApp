@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using SiwakeApp.ViewModels;
+using Xamarin.Forms;
 
 namespace SiwakeApp.Views
 {
@@ -12,6 +13,20 @@ namespace SiwakeApp.Views
             {
                 NavigationPage.SetHasNavigationBar(this, false);
             }
+        }
+
+        private void Answer_Clicked(object sender, System.EventArgs e)
+        {
+            RootPageViewModel vm = BindingContext as RootPageViewModel;
+            if (vm.EnableRightPage())
+            {
+                vm.RightPage();
+            }
+            else
+            {
+                Navigation.PushAsync(new ResultPage());
+            }
+            
         }
     }
 }

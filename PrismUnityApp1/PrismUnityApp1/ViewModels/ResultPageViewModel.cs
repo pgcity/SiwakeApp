@@ -6,9 +6,9 @@ using System.Linq;
 
 namespace SiwakeApp.ViewModels
 {
-    public class QuestionPageViewModel : BindableBase
+    public class ResultPageViewModel : BindableBase
     {
-        public QuestionPageViewModel()
+        public ResultPageViewModel()
         {
 
         }

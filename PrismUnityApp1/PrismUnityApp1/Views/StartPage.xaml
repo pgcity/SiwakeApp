@@ -4,7 +4,7 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              x:Class="SiwakeApp.Views.StartPage">
     <StackLayout>
-        <Label Text="{Binding SelectedItem.Title}"></Label>
+        <Label Text="{Binding SelectedItem.SetName}"></Label>
         <Button Text="スタート！" Clicked="Button_Clicked"></Button>
     </StackLayout>
 </ContentPage>

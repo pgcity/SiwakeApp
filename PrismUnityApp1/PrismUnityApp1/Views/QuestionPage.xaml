@@ -2,15 +2,17 @@
 <CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="SiwakeApp.Views.QuestionPage">
-    <ContentPage>
-        <Label Text="aaaa"></Label>
-    </ContentPage>
-    <ContentPage>
-        <Label Text="bbbb"></Label>
-    </ContentPage>
-    <ContentPage>
-        <Label Text="cccc"></Label>
-    </ContentPage>
+             x:Class="SiwakeApp.Views.QuestionPage"
+             ItemsSource="{Binding CurrentQuestionList}"
+             SelectedItem="{Binding CurrentQuestionPage}">
+    <CarouselPage.ItemTemplate>
+        <DataTemplate>
+            <ContentPage>
+                <StackLayout>
+                    <Label Text="{Binding Description}"></Label>
+                    <Button Text="回答" Clicked="Answer_Clicked"></Button>
+                </StackLayout>
+            </ContentPage>
+        </DataTemplate>
+    </CarouselPage.ItemTemplate>
 </CarouselPage>

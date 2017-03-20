@@ -14,7 +14,7 @@ namespace SiwakeApp.Views
 
         private void ListViewMenu_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            this.ViewModel.PageChange(e.SelectedItem as ViewModels.MenuItem);
+            this.ViewModel.PageChange(e.SelectedItem as QuestionSetInfo);
         }
     }
 }
