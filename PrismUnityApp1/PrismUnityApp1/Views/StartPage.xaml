@@ -5,6 +5,7 @@
              x:Class="SiwakeApp.Views.StartPage">
     <StackLayout>
         <Label Text="{Binding SelectedItem.SetName}"></Label>
+        <Label Text="{Binding SelectedItem.Description}"></Label>
         <Button Text="スタート！" Clicked="Button_Clicked"></Button>
     </StackLayout>
 </ContentPage>

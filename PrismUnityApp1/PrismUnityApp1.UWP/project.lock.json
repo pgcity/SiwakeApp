@@ -16511,16 +16511,16 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\tkym1\\Source\\Repos\\SiwakeApp\\PrismUnityApp1\\PrismUnityApp1.UWP\\SiwakeApp.UWP.csproj",
+      "projectUniqueName": "C:\\Users\\tkym1\\Source\\Repos\\SiwakeApp2\\PrismUnityApp1\\PrismUnityApp1.UWP\\SiwakeApp.UWP.csproj",
       "projectName": "SiwakeApp.UWP",
-      "projectPath": "C:\\Users\\tkym1\\Source\\Repos\\SiwakeApp\\PrismUnityApp1\\PrismUnityApp1.UWP\\SiwakeApp.UWP.csproj",
-      "projectJsonPath": "C:\\Users\\tkym1\\Source\\Repos\\SiwakeApp\\PrismUnityApp1\\PrismUnityApp1.UWP\\project.json",
+      "projectPath": "C:\\Users\\tkym1\\Source\\Repos\\SiwakeApp2\\PrismUnityApp1\\PrismUnityApp1.UWP\\SiwakeApp.UWP.csproj",
+      "projectJsonPath": "C:\\Users\\tkym1\\Source\\Repos\\SiwakeApp2\\PrismUnityApp1\\PrismUnityApp1.UWP\\project.json",
       "projectStyle": "ProjectJson",
       "frameworks": {
         "uap10.0": {
           "projectReferences": {
-            "C:\\Users\\tkym1\\Source\\Repos\\SiwakeApp\\PrismUnityApp1\\PrismUnityApp1\\SiwakeApp.csproj": {
-              "projectPath": "C:\\Users\\tkym1\\Source\\Repos\\SiwakeApp\\PrismUnityApp1\\PrismUnityApp1\\SiwakeApp.csproj"
+            "C:\\Users\\tkym1\\Source\\Repos\\SiwakeApp2\\PrismUnityApp1\\PrismUnityApp1\\SiwakeApp.csproj": {
+              "projectPath": "C:\\Users\\tkym1\\Source\\Repos\\SiwakeApp2\\PrismUnityApp1\\PrismUnityApp1\\SiwakeApp.csproj"
             }
           }
         }
