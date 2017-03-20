@@ -18,6 +18,7 @@ namespace SiwakeApp.Views
 
             RootPageViewModel vm = BindingContext as RootPageViewModel;
             vm.ResetPage();
+            vm.IsPresented = false;
         }
     }
 }
