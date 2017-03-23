@@ -28,5 +28,11 @@ namespace SiwakeApp.Views
             }
             
         }
+
+        private void Result_Clicked(object sender, System.EventArgs e)
+        {
+            
+
+        }
     }
 }

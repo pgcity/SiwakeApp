@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using SiwakeApp.ViewModels;
+using Xamarin.Forms;
 
 namespace SiwakeApp.Views
 {
@@ -14,6 +15,8 @@ namespace SiwakeApp.Views
             }
         }
 
+
+
         private async System.Threading.Tasks.Task Button_ClickedAsync(object sender, System.EventArgs e)
         {
             var page = Navigation.NavigationStack[0];
@@ -21,6 +24,20 @@ namespace SiwakeApp.Views
             {
                 await page.Navigation.PopAsync(false);
             }
+
+            RootPageViewModel vm = BindingContext as RootPageViewModel;
+            vm.IsResult = false;
+        }
+
+        /// <summary>
+        /// 表示されたとき
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ContentPage_Appearing(object sender, System.EventArgs e)
+        {
+            RootPageViewModel vm = BindingContext as RootPageViewModel;
+            vm.IsResult = true;
         }
     }
 }

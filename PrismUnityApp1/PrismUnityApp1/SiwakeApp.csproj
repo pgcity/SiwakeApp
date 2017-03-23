@@ -42,8 +42,11 @@
     </Compile>
     <Compile Include="QuestionInfo.cs" />
     <Compile Include="QuestionModel.cs" />
+    <Compile Include="ViewModels\QuestionViewModel.cs" />
     <Compile Include="QuestionSetInfo.cs" />
     <Compile Include="Siwake.cs" />
+    <Compile Include="ViewModels\SiwakeKamokuViewModel.cs" />
+    <Compile Include="UnfocusedBehavior.cs" />
     <Compile Include="Views\ResultPage.xaml.cs">
       <DependentUpon>ResultPage.xaml</DependentUpon>
     </Compile>

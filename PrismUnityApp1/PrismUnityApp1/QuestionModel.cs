@@ -21,15 +21,5 @@ namespace SiwakeApp
         {
             Questions = Newtonsoft.Json.JsonConvert.DeserializeObject<List<QuestionSetInfo>>(PCLResource.Questions);
         }
-
-        public ObservableCollection<QuestionSetInfo> GetQuestionSetList()
-        {
-            var result = new ObservableCollection<QuestionSetInfo>();
-            foreach(var item in Questions)
-            {
-                result.Add(item);
-            }
-            return result;
-        }
     }
 }

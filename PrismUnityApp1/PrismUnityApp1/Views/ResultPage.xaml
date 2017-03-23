@@ -2,9 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-             x:Class="SiwakeApp.Views.ResultPage" Title="{Binding ResultPageName}">
+             x:Class="SiwakeApp.Views.ResultPage" Title="{Binding ResultPageName}"
+             Appearing="ContentPage_Appearing">
     <StackLayout>
-        <Label Text="結果発表！"></Label>
+        <Label Text="結果発表" TextColor="#212121" FontSize="Large"></Label>
+        <Frame OutlineColor="#bdbdbd" Margin="5,5,5,5">
+            <Label Text="結果 10点" TextColor="#212121"></Label>
+        </Frame>
         <Button Text="終了" Clicked="Button_ClickedAsync"></Button>
     </StackLayout>
 </ContentPage>

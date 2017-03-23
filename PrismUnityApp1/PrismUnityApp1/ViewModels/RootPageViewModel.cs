@@ -2,6 +2,8 @@
 using Prism.Navigation;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
+using System;
+using System.Collections.Generic;
 
 namespace SiwakeApp.ViewModels
 {
@@ -24,7 +26,8 @@ namespace SiwakeApp.ViewModels
         public QuestionSetInfo SelectedItem {
             get { return selectedItem; }
             set { this.SetProperty(ref this.selectedItem, value);
-                CurrentQuestionList = new ObservableCollection<QuestionInfo>(selectedItem.Questions);
+
+                GetCurrentQuestionList(selectedItem.Questions);
                 ResetPage();
                 if(Device.OS != TargetPlatform.Windows)
                 {
@@ -34,12 +37,37 @@ namespace SiwakeApp.ViewModels
                 }
             }
         }
-        public ObservableCollection<QuestionInfo> CurrentQuestionList { get; set; }
-        private QuestionInfo currentQuestionPage;
-        public QuestionInfo CurrentQuestionPage
+
+        /// <summary>
+        /// 問題リストから、問題ページリストを作成
+        /// </summary>
+        /// <param name="questions"></param>
+        private void GetCurrentQuestionList(List<QuestionInfo> questions)
+        {
+            int cnt = 0;
+            CurrentQuestionList = new ObservableCollection<QuestionViewModel>();
+            foreach(var question in questions)
+            {
+                CurrentQuestionList.Add(
+                     new QuestionViewModel(question) { Number = ++cnt });
+            }
+        }
+
+        public ObservableCollection<QuestionViewModel> CurrentQuestionList { get; set; }
+
+        private QuestionViewModel currentQuestionPage;
+        public QuestionViewModel CurrentQuestionPage
         {
             get { return currentQuestionPage; }
             set { this.SetProperty(ref this.currentQuestionPage, value); }
+        }
+
+        //結果ページに行けるか
+        private bool isResult;
+        public bool IsResult
+        {
+            get { return isResult; }
+            set { this.SetProperty(ref this.isResult, value); }
         }
 
         //ページ遷移
@@ -100,7 +128,7 @@ namespace SiwakeApp.ViewModels
 
         public RootPageViewModel(INavigationService navigationService)
         {
-            Menus = QuestionModel.GetQuestionSetList();
+            Menus = new ObservableCollection<QuestionSetInfo>(QuestionModel.Questions);
 
             SelectedItem = Menus[0];
             this.NavigationService = navigationService;
