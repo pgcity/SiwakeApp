@@ -26,7 +26,7 @@ namespace SiwakeApp.ViewModels
                     KariList.Add(new SiwakeKamokuViewModel("", "", OnTextChanged));
                 }
                 //最終から2番目のアイテムが空の場合
-                if (KariList.Count >= 2 && KariList[KariList.Count - 2].IsEmpty())
+                while (KariList.Count >= 2 && KariList[KariList.Count - 2].IsEmpty())
                 {
                     KariList.RemoveAt(KariList.Count - 1);
                 }
@@ -45,7 +45,7 @@ namespace SiwakeApp.ViewModels
                     KashiList.Add(new SiwakeKamokuViewModel("", "", OnTextChanged));
                 }
                 //最終から2番目のアイテムが空の場合
-                if (KashiList.Count >= 2 && KashiList[KashiList.Count - 2].IsEmpty())
+                while (KashiList.Count >= 2 && KashiList[KashiList.Count - 2].IsEmpty())
                 {
                     KashiList.RemoveAt(KashiList.Count - 1);
                 }
