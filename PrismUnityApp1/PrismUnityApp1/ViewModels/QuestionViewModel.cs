@@ -21,7 +21,7 @@ namespace SiwakeApp.ViewModels
             else
             {
                 //最終アイテムが空でない場合
-                if (!KariList[KariList.Count - 1].IsEmpty())
+                if (KariList[KariList.Count - 1].IsFullInput())
                 {
                     KariList.Add(new SiwakeKamokuViewModel("", "", OnTextChanged));
                 }
@@ -40,7 +40,7 @@ namespace SiwakeApp.ViewModels
             else
             {
                 //最終アイテムが空でない場合
-                if (!KashiList[KashiList.Count - 1].IsEmpty())
+                if (KashiList[KashiList.Count - 1].IsFullInput())
                 {
                     KashiList.Add(new SiwakeKamokuViewModel("", "", OnTextChanged));
                 }

@@ -38,5 +38,10 @@ namespace SiwakeApp
         {
             return (Kamoku == "") && (Money == "");
         }
+
+        public bool IsFullInput()
+        {
+            return (Kamoku != "") && (Money != "");
+        }
     }
 }
