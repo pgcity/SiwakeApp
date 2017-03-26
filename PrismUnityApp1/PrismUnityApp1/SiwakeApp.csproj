@@ -35,6 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AppearingBehavior.cs" />
     <Compile Include="PCLResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -42,16 +43,19 @@
     </Compile>
     <Compile Include="QuestionInfo.cs" />
     <Compile Include="QuestionModel.cs" />
+    <Compile Include="ViewModels\ResultPageViewModel.cs" />
+    <Compile Include="Views\QuestionPage2.xaml.cs">
+      <DependentUpon>QuestionPage2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\QuestionPage2ViewModel.cs" />
     <Compile Include="ViewModels\QuestionViewModel.cs" />
     <Compile Include="QuestionSetInfo.cs" />
     <Compile Include="Siwake.cs" />
     <Compile Include="ViewModels\SiwakeKamokuViewModel.cs" />
     <Compile Include="UnfocusedBehavior.cs" />
+    <Compile Include="ViewModels\StartPageViewModel.cs" />
     <Compile Include="Views\ResultPage.xaml.cs">
       <DependentUpon>ResultPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\QuestionPage.xaml.cs">
-      <DependentUpon>QuestionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\StartPage.xaml.cs">
       <DependentUpon>StartPage.xaml</DependentUpon>
@@ -138,13 +142,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\QuestionPage.xaml">
+    <EmbeddedResource Include="Views\ResultPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\ResultPage.xaml">
+    <EmbeddedResource Include="Views\QuestionPage2.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

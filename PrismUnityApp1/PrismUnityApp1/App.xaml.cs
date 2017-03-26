@@ -12,16 +12,16 @@ namespace SiwakeApp
         {
             InitializeComponent();
 
-            await this.NavigationService.NavigateAsync("/RootPage/NavigationPage/StartPage");
+            await this.NavigationService.NavigateAsync("/RootPage");
         }
 
         protected override void RegisterTypes()
         {
             Container.RegisterTypeForNavigation<RootPage>();
-            Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<StartPage>();
-            Container.RegisterTypeForNavigation<QuestionPage>();
             Container.RegisterTypeForNavigation<ResultPage>();
+            Container.RegisterTypeForNavigation<NavigationPage>();
+            Container.RegisterTypeForNavigation<QuestionPage2>();
         }
     }
 }

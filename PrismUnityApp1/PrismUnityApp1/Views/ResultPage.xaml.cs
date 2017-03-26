@@ -14,30 +14,5 @@ namespace SiwakeApp.Views
                 NavigationPage.SetHasNavigationBar(this, false);
             }
         }
-
-
-
-        private async System.Threading.Tasks.Task Button_ClickedAsync(object sender, System.EventArgs e)
-        {
-            var page = Navigation.NavigationStack[0];
-            while (page.Navigation.NavigationStack.Count > 1)
-            {
-                await page.Navigation.PopAsync(false);
-            }
-
-            RootPageViewModel vm = BindingContext as RootPageViewModel;
-            vm.IsResult = false;
-        }
-
-        /// <summary>
-        /// 表示されたとき
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ContentPage_Appearing(object sender, System.EventArgs e)
-        {
-            RootPageViewModel vm = BindingContext as RootPageViewModel;
-            vm.IsResult = true;
-        }
     }
 }

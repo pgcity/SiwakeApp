@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:local="clr-namespace:SiwakeApp;assembly=SiwakeApp"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             ItemsSource="{Binding CurrentQuestionList}"
+             SelectedItem="{Binding CurrentQuestionPage}"
+             Title="{Binding QuestionPageName}"
+             x:Class="SiwakeApp.Views.QuestionPage2"
+             x:Name="root">
+    <CarouselPage.ItemTemplate>
+        <DataTemplate>
+            <ContentPage>
+                <StackLayout>
+                    <Label TextColor="#212121" FontSize="Large" Text="{Binding Number, StringFormat='第{0}問'}"></Label>
+                    <Frame OutlineColor="#bdbdbd" Margin="5,5,5,5">
+                        <Label Text="{Binding Question.Description}" TextColor="#212121"></Label>
+                    </Frame>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <ListView Grid.Column="0" ItemsSource="{Binding KariList}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid HeightRequest="38">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="3*"/>
+                                                <ColumnDefinition Width="2*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Entry Text="{Binding Kamoku}" Grid.Column="0" FontSize="Small" TextColor="Black">
+                                                <Entry.Behaviors>
+                                                    <local:UnfocusedBehavior />
+                                                </Entry.Behaviors>
+                                            </Entry>
+                                            <Entry Text="{Binding Money}" Grid.Column="1" FontSize="Small" TextColor="Black"  Keyboard="Numeric">
+                                                <Entry.Behaviors>
+                                                    <local:UnfocusedBehavior />
+                                                </Entry.Behaviors>
+                                            </Entry>
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <ListView Grid.Column="1" ItemsSource="{Binding KashiList}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="3*"/>
+                                                <ColumnDefinition Width="2*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Entry Text="{Binding Kamoku}" Grid.Column="0" FontSize="Small" TextColor="Black">
+                                                <Entry.Behaviors>
+                                                    <local:UnfocusedBehavior />
+                                                </Entry.Behaviors>
+                                            </Entry>
+                                            <Entry Text="{Binding Money}" Grid.Column="1" FontSize="Small" TextColor="Black"  Keyboard="Numeric">
+                                                <Entry.Behaviors>
+                                                    <local:UnfocusedBehavior />
+                                                </Entry.Behaviors>
+                                            </Entry>
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                    <Button Text="回答" Command="{Binding BindingContext.AnswerCommand, Source={x:Reference root}}"></Button>
+                </StackLayout>
+            </ContentPage>
+        </DataTemplate>
+    </CarouselPage.ItemTemplate>
+</CarouselPage>

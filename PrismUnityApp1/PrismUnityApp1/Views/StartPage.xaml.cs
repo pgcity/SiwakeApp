@@ -11,15 +11,5 @@ namespace SiwakeApp.Views
         {
             InitializeComponent();
         }
-
-        private void Button_Clicked(object sender, System.EventArgs e)
-        {
-            Navigation.PushAsync(new QuestionPage(), true);
-
-            RootPageViewModel vm = BindingContext as RootPageViewModel;
-            vm.ResetPage();
-            vm.IsPresented = false;
-            vm.IsResult = false;
-        }
     }
 }

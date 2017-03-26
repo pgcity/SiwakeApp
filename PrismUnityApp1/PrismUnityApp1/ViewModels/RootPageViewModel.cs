@@ -4,11 +4,23 @@ using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using System;
 using System.Collections.Generic;
+using Prism.Commands;
+using System.Windows.Input;
 
 namespace SiwakeApp.ViewModels
 {
-    public class RootPageViewModel : BindableBase
+    public class RootPageViewModel : BindableBase, INavigationAware
     {
+        //コンストラクタ
+        public RootPageViewModel(INavigationService navigationService)
+        {
+            this.NavigationService = navigationService;
+            Menus = new ObservableCollection<QuestionSetInfo>(QuestionModel.Questions);
+        }
+
+        //コマンド
+
+        //プロパティ
         private QuestionModel QuestionModel { get; set; } = new QuestionModel();
 
         public ObservableCollection<QuestionSetInfo> Menus { get; }
@@ -22,34 +34,12 @@ namespace SiwakeApp.ViewModels
             set { this.SetProperty(ref this.isPresented, value); }
         }
 
+        // 選択した問題セット
         private QuestionSetInfo selectedItem;
         public QuestionSetInfo SelectedItem {
             get { return selectedItem; }
             set { this.SetProperty(ref this.selectedItem, value);
-
-                GetCurrentQuestionList(selectedItem.Questions);
                 ResetPage();
-                if(Device.OS != TargetPlatform.Windows)
-                {
-                    StartPageName = selectedItem.SetName;
-                    QuestionPageName = selectedItem.SetName;
-                    ResultPageName = selectedItem.SetName + " 結果発表";
-                }
-            }
-        }
-
-        /// <summary>
-        /// 問題リストから、問題ページリストを作成
-        /// </summary>
-        /// <param name="questions"></param>
-        private void GetCurrentQuestionList(List<QuestionInfo> questions)
-        {
-            int cnt = 0;
-            CurrentQuestionList = new ObservableCollection<QuestionViewModel>();
-            foreach(var question in questions)
-            {
-                CurrentQuestionList.Add(
-                     new QuestionViewModel(question) { Number = ++cnt });
             }
         }
 
@@ -70,74 +60,50 @@ namespace SiwakeApp.ViewModels
             set { this.SetProperty(ref this.isResult, value); }
         }
 
-        //ページ遷移
+
         public void ResetPage()
         {
-            CurrentQuestionPage = CurrentQuestionList[0];
-        }
-        public void RightPage()
-        {
-            int index = CurrentQuestionList.IndexOf(CurrentQuestionPage);
-            if (index < CurrentQuestionList.Count - 1)
-            {
-                CurrentQuestionPage = CurrentQuestionList[index + 1];
-            }
-        }
-        public bool EnableRightPage()
-        {
-            int index = CurrentQuestionList.IndexOf(CurrentQuestionPage);
-            return index < CurrentQuestionList.Count - 1;
+            //CurrentQuestionPage = CurrentQuestionList[0];
+ 
         }
 
-        public void LeftPage()
-        {
-            int index = CurrentQuestionList.IndexOf(CurrentQuestionPage);
-            if (index > 0)
-            {
-                CurrentQuestionPage = CurrentQuestionList[index - 1];
-            }
-        }
-        public bool EnableLeftPage()
-        {
-            int index = CurrentQuestionList.IndexOf(CurrentQuestionPage);
-            return index > 0;
-        }
-
-        //ページタイトル
-        private string startPageName = "開始";
-        public string StartPageName
-        {
-            get { return startPageName; }
-            set { this.SetProperty(ref this.startPageName, value); }
-        }
-
-        private string questionPageName = "トレーニング";
-        public string QuestionPageName
-        {
-            get { return questionPageName; }
-            set { this.SetProperty(ref this.questionPageName, value); }
-        }
-
-        private string resultPageName = "結果発表";
-        public string ResultPageName
-        {
-            get { return resultPageName; }
-            set { this.SetProperty(ref this.resultPageName, value); }
-        }
-
-
-        public RootPageViewModel(INavigationService navigationService)
-        {
-            Menus = new ObservableCollection<QuestionSetInfo>(QuestionModel.Questions);
-
-            SelectedItem = Menus[0];
-            this.NavigationService = navigationService;
-        }
-
+        // 問題セット切り替え
+        // 問題セットが変更されたときにコードビハインドから呼ばれる
         public void PageChange(QuestionSetInfo menuItem)
         {
             SelectedItem = menuItem;
-            this.IsPresented = false;
+
+            var param = new NavigationParameters();
+            param["SelectedQuestionSet"] = SelectedItem;
+            param["RootPageViewModel"] = this;
+
+            this.NavigationService.NavigateAsync("NavigationPage/StartPage", param);
+        }
+
+        // ナビゲーション
+        public void OnNavigatedFrom(NavigationParameters parameters)
+        {
+        }
+
+        public void OnNavigatedTo(NavigationParameters parameters)
+        {
+            if(parameters.Count > 0 && !parameters.ContainsKey("PrevPage"))
+            {
+                return;
+            }
+
+            QuestionSetInfo menuItem = null;
+            if (parameters.ContainsKey("PrevPage") 
+                && parameters["PrevPage"] as string == "ResultPage")
+            {
+                menuItem = parameters["SelectedQuestionSet"] as QuestionSetInfo;
+            }
+
+            if(menuItem == null)
+            {
+                menuItem = Menus[0];
+            }
+            PageChange(menuItem);
         }
     }
 }
