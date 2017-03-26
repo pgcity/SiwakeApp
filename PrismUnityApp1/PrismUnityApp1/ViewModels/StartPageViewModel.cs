@@ -19,6 +19,8 @@ namespace SiwakeApp.ViewModels
             this.NavigationService = navigationService;
 
             StartCommand = new Command(async () => {
+                GetCurrentQuestionList(SelectedQuestionSet.Questions);
+
                 var navigationParam = new NavigationParameters();
                 navigationParam["SelectedQuestionSet"] = SelectedQuestionSet;
                 navigationParam["CurrentQuestionList"] = CurrentQuestionList;
@@ -45,7 +47,7 @@ namespace SiwakeApp.ViewModels
             {
                 this.SetProperty(ref selectedQuestionSet, value);
                 selectedQuestionSet = value;
-                GetCurrentQuestionList(value.Questions);
+
                 if (Device.OS != TargetPlatform.Windows)
                 {
                     StartPageName = selectedQuestionSet.SetName;
