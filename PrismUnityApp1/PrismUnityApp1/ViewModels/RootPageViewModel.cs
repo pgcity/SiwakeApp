@@ -60,6 +60,7 @@ namespace SiwakeApp.ViewModels
             set { this.SetProperty(ref this.isResult, value); }
         }
 
+        public object StartOption { get; private set; }
 
         public void ResetPage()
         {
@@ -76,6 +77,10 @@ namespace SiwakeApp.ViewModels
             var param = new NavigationParameters();
             param["SelectedQuestionSet"] = SelectedItem;
             param["RootPageViewModel"] = this;
+            if (StartOption != null)
+            {
+                param["StartOption"] = StartOption;
+            }
 
             this.NavigationService.NavigateAsync("NavigationPage/StartPage", param);
         }
@@ -97,6 +102,7 @@ namespace SiwakeApp.ViewModels
                 && parameters["PrevPage"] as string == "ResultPage")
             {
                 menuItem = parameters["SelectedQuestionSet"] as QuestionSetInfo;
+                StartOption = parameters["StartOption"];
             }
 
             if(menuItem == null)

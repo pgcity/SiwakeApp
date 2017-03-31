@@ -16,9 +16,9 @@ namespace SiwakeApp.ViewModels
         {
             this.NavigationService = navigationService;
 
-            EndCommand = new Command(() =>
+            EndCommand = new Command(async () =>
             {
-                GoToFirst();
+                await GoToFirstAsync();
             });
         }
 
@@ -71,15 +71,18 @@ namespace SiwakeApp.ViewModels
             set { this.SetProperty(ref this.resultPageName, value); }
         }
 
+        public object StartOption { get; private set; }
+
         //ナビゲーション
         //最初に戻る
-        private void GoToFirst()
+        private async System.Threading.Tasks.Task GoToFirstAsync()
         {
             var param = new NavigationParameters();
             param["SelectedQuestionSet"] = SelectedQuestionSet;
             param["PrevPage"] = "ResultPage";
+            param["StartOption"] = StartOption;
 
-            this.NavigationService.NavigateAsync("/RootPage", param);
+            await this.NavigationService.NavigateAsync("/RootPage", param);
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
@@ -90,6 +93,7 @@ namespace SiwakeApp.ViewModels
         {
             CurrentQuestionList = parameters["CurrentQuestionList"] as ObservableCollection<QuestionViewModel>;
             SelectedQuestionSet = parameters["SelectedQuestionSet"] as QuestionSetInfo;
+            StartOption = parameters["StartOption"];
         }
 
 

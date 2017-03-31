@@ -6,9 +6,30 @@
              x:Class="SiwakeApp.Views.StartPage" Title="{Binding StartPageName}">
     <StackLayout>
         <Frame OutlineColor="#bdbdbd" Margin="5,5,5,5">
-            <Label Text="{Binding SelectedQuestionSet.Description}" TextColor="#212121"></Label>
+            <Label Text="{Binding SelectedQuestionSet.Description}" TextColor="#212121"/>
         </Frame>
-        
+
+
+        <TableView Intent="Settings" Margin="5,5,5,5">
+            <TableRoot>
+                <TableSection Title="設定">
+                    <ViewCell>
+                        <ViewCell.View>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="4*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="問題ごとに採点する" Margin="10,10,10,10" TextColor="#212121" Grid.Column="0"/>
+                                <Switch Grid.Column="1" IsToggled="{Binding CheckPerQuestion}"/>
+                            </Grid>
+                        </ViewCell.View>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+
+
         <Button Text="スタート！" Command="{Binding StartCommand}"></Button>
     </StackLayout>
 </ContentPage>

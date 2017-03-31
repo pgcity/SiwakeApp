@@ -70,6 +70,9 @@ namespace SiwakeApp {
         ///    &quot;Questions&quot;: [
         ///      {
         ///        &quot;Description&quot;: &quot;1円かけで仕入れた&quot;,
+        ///        &quot;Hint&quot;: &quot;ヒント&quot;,
+        ///        &quot;Commentary&quot;: &quot;解説&quot;,
+        ///        &quot;UseOffsetAnswer&quot;: false,
         ///        &quot;SiwakeList&quot;: [
         ///          {
         ///            &quot;Kamoku&quot;: &quot;仕入&quot;,
@@ -84,10 +87,7 @@ namespace SiwakeApp {
         ///        ]
         ///      },
         ///      {
-        ///        &quot;Description&quot;: &quot;2円かけで仕入れた&quot;,
-        ///        &quot;SiwakeList&quot;: [
-        ///          {
-        ///            &quot;Ka [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
+        ///   [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Questions {
             get {

@@ -12,6 +12,12 @@ namespace SiwakeApp
     {
         [JsonProperty("Description")]
         public string Description { get; set; }
+        [JsonProperty("Hint")]
+        public string Hint { get; set; }
+        [JsonProperty("UseOffsetAnswer")]
+        public bool UseOffsetAnswer { get; set; }
+        [JsonProperty("Commentary")]
+        public string Commentary { get; set; }
         [JsonProperty("SiwakeList")]
         public List<Siwake> SiwakeList { get; set; }
     }

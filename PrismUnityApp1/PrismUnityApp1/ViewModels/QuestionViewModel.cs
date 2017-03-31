@@ -79,5 +79,30 @@ namespace SiwakeApp.ViewModels
             get; set;
         }
 
+        private bool answered;
+        public bool Answered {
+            get
+            {
+                return answered;
+            }
+            set
+            {
+                this.SetProperty(ref this.answered, value);
+                AnswerButtonLabel = "";
+            }
+        }
+
+        private string answerButtonLabel;
+        public string AnswerButtonLabel
+        {
+            get
+            {
+                return Answered ? "次へ" : "回答";
+            }
+            set
+            {
+                this.SetProperty(ref this.answerButtonLabel, value);
+            }
+        }
     }
 }

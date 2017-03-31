@@ -17,14 +17,7 @@ namespace SiwakeApp.ViewModels
             this.NavigationService = navigationService;
             AnswerCommand = new Command(() =>
             {
-                if (EnableRightPage())
-                {
-                    RightPage();
-                }
-                else
-                {
-                    GoToResult();
-                }
+                OnAnswer();
             });
         }
 
@@ -82,6 +75,38 @@ namespace SiwakeApp.ViewModels
             get { return questionPageName; }
             set { this.SetProperty(ref this.questionPageName, value); }
         }
+        
+        public bool CheckPerQuestion
+        {
+            get
+            {
+                return (bool)StartOption["CheckPerQuestion"];
+            }
+        }
+        public Dictionary<string, object> StartOption { get; private set; }
+
+
+        // 回答
+        private void OnAnswer()
+        {
+            //回答済みにする
+            var before = CurrentQuestionPage.Answered;
+            CurrentQuestionPage.Answered = true;
+
+            //ページ遷移
+            if (CheckPerQuestion && before || !CheckPerQuestion)
+            {
+                if (EnableRightPage())
+                {
+                    RightPage();
+                }
+                else
+                {
+                    GoToResult();
+                }
+            }
+        }
+
 
         // カルーセルページ遷移
         public void RightPage()
@@ -116,6 +141,7 @@ namespace SiwakeApp.ViewModels
         public void GoToResult()
         {
             var param = new NavigationParameters();
+            param["StartOption"] = StartOption;
             param["CurrentQuestionList"] = CurrentQuestionList;
             param["SelectedQuestionSet"] = SelectedQuestionSet;
 
@@ -134,6 +160,7 @@ namespace SiwakeApp.ViewModels
         {
             CurrentQuestionList = parameters["CurrentQuestionList"] as ObservableCollection<QuestionViewModel>;
             SelectedQuestionSet = parameters["SelectedQuestionSet"] as QuestionSetInfo;
+            StartOption = (Dictionary<string, object>)parameters["StartOption"];
         }
     }
 }

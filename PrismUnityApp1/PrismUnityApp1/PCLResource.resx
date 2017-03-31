@@ -126,6 +126,9 @@
     "Questions": [
       {
         "Description": "1円かけで仕入れた",
+        "Hint": "ヒント",
+        "Commentary": "解説",
+        "UseOffsetAnswer": false,
         "SiwakeList": [
           {
             "Kamoku": "仕入",
@@ -141,6 +144,9 @@
       },
       {
         "Description": "2円かけで仕入れた",
+        "Hint": "ヒント",
+        "Commentary": "解説",
+        "UseOffsetAnswer": false,
         "SiwakeList": [
           {
             "Kamoku": "仕入",
@@ -163,6 +169,9 @@
     "Questions": [
       {
         "Description": "1円かけで仕入れた",
+        "Hint": "ヒント",
+        "Commentary": "解説",
+        "UseOffsetAnswer": false,
         "SiwakeList": [
           {
             "Kamoku": "仕入",

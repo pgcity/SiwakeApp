@@ -24,7 +24,13 @@ namespace SiwakeApp.ViewModels
                 var navigationParam = new NavigationParameters();
                 navigationParam["SelectedQuestionSet"] = SelectedQuestionSet;
                 navigationParam["CurrentQuestionList"] = CurrentQuestionList;
+
+                var startOption = new Dictionary<string, object>();
+                startOption["CheckPerQuestion"] = CheckPerQuestion;
+                navigationParam["StartOption"] = startOption;
+
                 await navigationService.NavigateAsync("QuestionPage2", navigationParam);
+
 
                 RootViewModel.IsPresented = false;
             });
@@ -63,9 +69,19 @@ namespace SiwakeApp.ViewModels
             set { this.SetProperty(ref this.startPageName, value); }
         }
 
+        // 問題ごとに採点する
+        private bool checkPerQuestion;
+        public bool CheckPerQuestion
+        {
+            get { return checkPerQuestion; }
+            set { this.SetProperty(ref this.checkPerQuestion, value); }
+        }
+
+
         public ObservableCollection<QuestionViewModel> CurrentQuestionList { get; private set; }
         public bool? MenuIsPresented { get; private set; }
         public RootPageViewModel RootViewModel { get; private set; }
+        public Dictionary<string, object> StartOption { get; private set; }
 
         // メソッド
 
@@ -93,6 +109,11 @@ namespace SiwakeApp.ViewModels
         {
             RootViewModel = parameters["RootPageViewModel"] as RootPageViewModel;
             SelectedQuestionSet = parameters["SelectedQuestionSet"] as QuestionSetInfo;
+
+            if (parameters.ContainsKey("StartOption")) { 
+                StartOption = parameters["StartOption"] as Dictionary<string, object>;
+                CheckPerQuestion = (bool)StartOption["CheckPerQuestion"];
+            }
         }
     }
 }
