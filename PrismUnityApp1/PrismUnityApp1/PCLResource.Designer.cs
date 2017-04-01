@@ -67,6 +67,7 @@ namespace SiwakeApp {
         ///    &quot;SetName&quot;: &quot;問題集1&quot;,
         ///    &quot;Grade&quot;: &quot;3級&quot;,
         ///    &quot;Description&quot;: &quot;問題集1です&quot;,
+        ///    &quot;Comment&quot;: &quot;解答後のコメントです&quot;,
         ///    &quot;Questions&quot;: [
         ///      {
         ///        &quot;Description&quot;: &quot;商品を450円で仕入れ、他社から受けた約束手形を裏書譲渡した。&quot;,
@@ -80,8 +81,7 @@ namespace SiwakeApp {
         ///            &quot;isKari&quot;: true
         ///          },
         ///          {
-        ///            &quot;Kamoku&quot;: &quot;受取手形&quot;,
-        ///            &quot;Money&quot;:  [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
+        ///            &quot;Kamoku&quot;:  [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Questions {
             get {

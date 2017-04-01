@@ -75,7 +75,6 @@ namespace SiwakeApp
                 }
             }
 
-            //いったん全部の仕訳をWrongにする
             var kariWrongItems = from kariWrong in ViewModel.KariList
                             where kariWrong.KamokuType != SiwakeKamokuViewModel.ItemType.Correct
                             || kariWrong.MoneyType != SiwakeKamokuViewModel.ItemType.Correct

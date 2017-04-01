@@ -17,6 +17,8 @@ namespace SiwakeApp
         public string Grade { get; set; }
         [JsonProperty("Description")]
         public string Description { get; set; }
+        [JsonProperty("Comment")]
+        public string Comment { get; set; }
         [JsonProperty("Questions")]
         public List<QuestionInfo> Questions { get;set; }
     }

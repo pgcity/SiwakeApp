@@ -71,6 +71,30 @@ namespace SiwakeApp.ViewModels
             set { this.SetProperty(ref this.resultPageName, value); }
         }
 
+        //問題数
+        private int questionCount;
+        public int QuestionCount
+        {
+            get { return questionCount; }
+            set { this.SetProperty(ref this.questionCount, value); }
+        }
+
+        //正答数
+        private int correctCount;
+        public int CorrectCount
+        {
+            get { return correctCount; }
+            set { this.SetProperty(ref this.correctCount, value); }
+        }
+
+        //スコア
+        private int score;
+        public int Score
+        {
+            get { return score; }
+            set { this.SetProperty(ref this.score, value); }
+        }
+
         public object StartOption { get; private set; }
 
         //ナビゲーション
@@ -95,11 +119,20 @@ namespace SiwakeApp.ViewModels
             SelectedQuestionSet = parameters["SelectedQuestionSet"] as QuestionSetInfo;
             StartOption = parameters["StartOption"];
 
+            QuestionCount = CurrentQuestionList.Count;
+
             //全問採点済みにする
-            foreach(var question in CurrentQuestionList)
+            foreach (var question in CurrentQuestionList)
             {
                 question.Confirm();
+
+                //正答数カウント
+                if (question.IsCorrect)
+                {
+                    CorrectCount++;
+                }
             }
+            Score = (QuestionCount > 0) ? CorrectCount * 100 / QuestionCount : 0;
         }
 
 

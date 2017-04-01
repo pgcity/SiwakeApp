@@ -123,6 +123,7 @@
     "SetName": "問題集1",
     "Grade": "3級",
     "Description": "問題集1です",
+    "Comment": "解答後のコメントです",
     "Questions": [
       {
         "Description": "商品を450円で仕入れ、他社から受けた約束手形を裏書譲渡した。",
@@ -166,6 +167,7 @@
     "SetName": "問題集2",
     "Grade": "3級",
     "Description": "問題集2です",
+    "Comment": "解答後のコメントです",
     "Questions": [
       {
         "Description": "1円かけで仕入れた",

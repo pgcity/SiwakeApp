@@ -7,7 +7,17 @@
     <StackLayout>
         <Label Text="結果発表" TextColor="#212121" FontSize="Large"></Label>
         <Frame OutlineColor="#bdbdbd" Margin="5,5,5,5">
-            <Label Text="結果 10点" TextColor="#212121"></Label>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding CorrectCount}" TextColor="#212121"/>
+                    <Label Text="/" TextColor="#212121"/>
+                    <Label Text="{Binding QuestionCount}" TextColor="#212121"/>
+                    <Label Text="  結果" TextColor="#212121"/>
+                    <Label Text="{Binding Score}" TextColor="#212121"/>
+                    <Label Text="点" TextColor="#212121"/>
+                </StackLayout>
+                <Label Text="{Binding SelectedQuestionSet.Comment}"/>
+            </StackLayout>
         </Frame>
         <Button Text="終了" Command="{Binding EndCommand}"></Button>
     </StackLayout>

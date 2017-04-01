@@ -83,6 +83,7 @@ namespace SiwakeApp.ViewModels
 
             var check = new SiwakeCheck(this);
             ResultText = check.ResultText;
+            IsCorrect = check.IsCorrect;
 
 
         }
@@ -106,6 +107,19 @@ namespace SiwakeApp.ViewModels
             set
             {
                 this.SetProperty(ref this.resultText, value);
+            }
+        }
+
+        private bool isCorrect;
+        public bool IsCorrect
+        {
+            get
+            {
+                return isCorrect;
+            }
+            set
+            {
+                this.SetProperty(ref this.isCorrect, value);
             }
         }
 
