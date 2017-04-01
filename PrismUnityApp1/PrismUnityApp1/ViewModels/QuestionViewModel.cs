@@ -61,6 +61,16 @@ namespace SiwakeApp.ViewModels
             KashiList.Add(new SiwakeKamokuViewModel("", "", OnTextChanged));
         }
 
+        public void Confirm()
+        {
+            if (Confirmed)
+            {
+                return;
+            }
+            Confirmed = true;
+            ResultText = "正解";
+        }
+
         public QuestionInfo Question
         {
             get; set;
@@ -70,10 +80,24 @@ namespace SiwakeApp.ViewModels
             get;set;
         }
 
+        private string resultText;
+        public string ResultText
+        {
+            get
+            {
+                return resultText;
+            }
+            set
+            {
+                this.SetProperty(ref this.resultText, value);
+            }
+        }
+
         public ObservableCollection<SiwakeKamokuViewModel> KariList
         {
             get;set;
         }
+
         public ObservableCollection<SiwakeKamokuViewModel> KashiList
         {
             get; set;

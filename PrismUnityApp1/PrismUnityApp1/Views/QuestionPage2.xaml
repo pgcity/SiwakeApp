@@ -9,15 +9,25 @@
              Title="{Binding QuestionPageName}"
              x:Class="SiwakeApp.Views.QuestionPage2"
              x:Name="root">
+    <CarouselPage.Resources>
+        <ResourceDictionary>
+            <local:NegateBooleanConverter x:Key="inverter"/>
+        </ResourceDictionary>
+    </CarouselPage.Resources>
     <CarouselPage.ItemTemplate>
         <DataTemplate>
             <ContentPage>
                 <StackLayout>
-                    <Label TextColor="#212121" FontSize="Large" Text="{Binding Number, StringFormat='第{0}問'}"></Label>
+                    <StackLayout Orientation="Horizontal">
+                        <Label TextColor="#212121" FontSize="Large" Text="{Binding Number, StringFormat='第{0}問'}"/>
+                        <Label TextColor="#BD2121" FontSize="Large" Text="{Binding ResultText}" IsVisible="{Binding Confirmed}"/>
+                    </StackLayout>
+                    
                     <Frame OutlineColor="#bdbdbd" Margin="5,5,5,5">
                         <StackLayout Orientation="Vertical">
                             <Label Text="{Binding Question.Description}" TextColor="#212121"></Label>
-                            <Label Text="{Binding Question.Commentary}" TextColor="#BD2121" IsVisible="{Binding Confirmed}"></Label>
+                            <Label Text="[解説]" TextColor="#212121" IsVisible="{Binding Confirmed}"></Label>
+                            <Label Text="{Binding Question.Commentary}" TextColor="#757575" IsVisible="{Binding Confirmed}"></Label>
                         </StackLayout>
                     </Frame>
                     <Grid>
@@ -34,12 +44,14 @@
                                                 <ColumnDefinition Width="3*"/>
                                                 <ColumnDefinition Width="2*"/>
                                             </Grid.ColumnDefinitions>
-                                            <Entry Text="{Binding Kamoku}" Grid.Column="0" FontSize="Small" TextColor="Black">
+                                            <Entry Text="{Binding Kamoku}" Grid.Column="0" FontSize="Small" TextColor="Black" 
+                                                   IsEnabled="{Binding BindingContext.CurrentQuestionPage.Confirmed, Source={x:Reference root}, Mode=TwoWay, Converter={StaticResource inverter}}">
                                                 <Entry.Behaviors>
                                                     <local:UnfocusedBehavior />
                                                 </Entry.Behaviors>
                                             </Entry>
-                                            <Entry Text="{Binding Money}" Grid.Column="1" FontSize="Small" TextColor="Black"  Keyboard="Numeric">
+                                            <Entry Text="{Binding Money}" Grid.Column="1" FontSize="Small" TextColor="Black"  Keyboard="Numeric"
+                                                   IsEnabled="{Binding BindingContext.CurrentQuestionPage.Confirmed, Source={x:Reference root}, Mode=TwoWay, Converter={StaticResource inverter}}">
                                                 <Entry.Behaviors>
                                                     <local:UnfocusedBehavior />
                                                 </Entry.Behaviors>
@@ -58,12 +70,14 @@
                                                 <ColumnDefinition Width="3*"/>
                                                 <ColumnDefinition Width="2*"/>
                                             </Grid.ColumnDefinitions>
-                                            <Entry Text="{Binding Kamoku}" Grid.Column="0" FontSize="Small" TextColor="Black">
+                                            <Entry Text="{Binding Kamoku}" Grid.Column="0" FontSize="Small" TextColor="Black"
+                                                   IsEnabled="{Binding BindingContext.CurrentQuestionPage.Confirmed, Source={x:Reference root}, Mode=TwoWay, Converter={StaticResource inverter}}">
                                                 <Entry.Behaviors>
                                                     <local:UnfocusedBehavior />
                                                 </Entry.Behaviors>
                                             </Entry>
-                                            <Entry Text="{Binding Money}" Grid.Column="1" FontSize="Small" TextColor="Black"  Keyboard="Numeric">
+                                            <Entry Text="{Binding Money}" Grid.Column="1" FontSize="Small" TextColor="Black"  Keyboard="Numeric"
+                                                   IsEnabled="{Binding BindingContext.CurrentQuestionPage.Confirmed, Source={x:Reference root}, Mode=TwoWay, Converter={StaticResource inverter}}">
                                                 <Entry.Behaviors>
                                                     <local:UnfocusedBehavior />
                                                 </Entry.Behaviors>

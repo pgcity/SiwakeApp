@@ -98,7 +98,7 @@ namespace SiwakeApp.ViewModels
             //全問採点済みにする
             foreach(var question in CurrentQuestionList)
             {
-                question.Confirmed = true;
+                question.Confirm();
             }
         }
 

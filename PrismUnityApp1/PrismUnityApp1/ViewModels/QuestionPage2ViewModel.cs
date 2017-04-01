@@ -95,7 +95,7 @@ namespace SiwakeApp.ViewModels
 
             if (CheckPerQuestion)
             {
-                CurrentQuestionPage.Confirmed = true;
+                CurrentQuestionPage.Confirm();
             }
 
             //ページ遷移
