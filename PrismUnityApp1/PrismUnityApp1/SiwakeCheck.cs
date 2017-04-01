@@ -15,6 +15,7 @@ namespace SiwakeApp
             Check();
         }
 
+        public bool IsCorrect { get; set; }
         private bool Checked { get; set; }
 
         // メソッド
@@ -25,8 +26,6 @@ namespace SiwakeApp
             {
                 return;
             }
-
-            ResultText = "正解";
 
             //仕訳の確認
             //いったん全部の仕訳をWrongにする
@@ -76,6 +75,26 @@ namespace SiwakeApp
                 }
             }
 
+            //いったん全部の仕訳をWrongにする
+            var kariWrongItems = from kariWrong in ViewModel.KariList
+                            where kariWrong.KamokuType != SiwakeKamokuViewModel.ItemType.Correct
+                            || kariWrong.MoneyType != SiwakeKamokuViewModel.ItemType.Correct
+                            select kariWrong;
+            var kasiWrongItems = from kasiWrong in ViewModel.KashiList
+                                 where kasiWrong.KamokuType != SiwakeKamokuViewModel.ItemType.Correct
+                                 || kasiWrong.MoneyType != SiwakeKamokuViewModel.ItemType.Correct
+                                 select kasiWrong;
+
+            if(kariWrongItems.Count() > 0 || kasiWrongItems.Count() > 0)
+            {
+                ResultText = "不正解";
+                IsCorrect = false;
+            }
+            else {
+                ResultText = "正解";
+                IsCorrect = true;
+            }
+            
             Checked = true;
         }
 
