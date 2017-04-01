@@ -92,6 +92,19 @@ namespace SiwakeApp.ViewModels
             }
         }
 
+        private bool confirmed;
+        public bool Confirmed
+        {
+            get
+            {
+                return confirmed;
+            }
+            set
+            {
+                this.SetProperty(ref this.confirmed, value);
+            }
+        }
+
         private string answerButtonLabel;
         public string AnswerButtonLabel
         {

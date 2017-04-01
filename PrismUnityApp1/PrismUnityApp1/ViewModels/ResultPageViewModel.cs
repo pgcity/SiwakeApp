@@ -94,6 +94,12 @@ namespace SiwakeApp.ViewModels
             CurrentQuestionList = parameters["CurrentQuestionList"] as ObservableCollection<QuestionViewModel>;
             SelectedQuestionSet = parameters["SelectedQuestionSet"] as QuestionSetInfo;
             StartOption = parameters["StartOption"];
+
+            //全問採点済みにする
+            foreach(var question in CurrentQuestionList)
+            {
+                question.Confirmed = true;
+            }
         }
 
 

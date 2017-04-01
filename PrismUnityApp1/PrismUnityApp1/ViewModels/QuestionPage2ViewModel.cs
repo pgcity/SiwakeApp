@@ -93,6 +93,11 @@ namespace SiwakeApp.ViewModels
             var before = CurrentQuestionPage.Answered;
             CurrentQuestionPage.Answered = true;
 
+            if (CheckPerQuestion)
+            {
+                CurrentQuestionPage.Confirmed = true;
+            }
+
             //ページ遷移
             if (CheckPerQuestion && before || !CheckPerQuestion)
             {

@@ -15,7 +15,10 @@
                 <StackLayout>
                     <Label TextColor="#212121" FontSize="Large" Text="{Binding Number, StringFormat='第{0}問'}"></Label>
                     <Frame OutlineColor="#bdbdbd" Margin="5,5,5,5">
-                        <Label Text="{Binding Question.Description}" TextColor="#212121"></Label>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="{Binding Question.Description}" TextColor="#212121"></Label>
+                            <Label Text="{Binding Question.Commentary}" TextColor="#BD2121" IsVisible="{Binding Confirmed}"></Label>
+                        </StackLayout>
                     </Frame>
                     <Grid>
                         <Grid.ColumnDefinitions>
