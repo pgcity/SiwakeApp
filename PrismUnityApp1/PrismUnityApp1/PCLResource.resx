@@ -125,19 +125,19 @@
     "Description": "問題集1です",
     "Questions": [
       {
-        "Description": "1円かけで仕入れた",
-        "Hint": "ヒント",
-        "Commentary": "解説",
+        "Description": "商品を450円で仕入れ、他社から受けた約束手形を裏書譲渡した。",
+        "Hint": "約束手形をもらっているので「受取手形」がすでにある！",
+        "Commentary": "仕入に対して、以前受け取っていた約束手形→受取手形を減らします。",
         "UseOffsetAnswer": false,
         "SiwakeList": [
           {
             "Kamoku": "仕入",
-            "Money": 1,
+            "Money": 450,
             "isKasi": false
           },
           {
-            "Kamoku": "買掛金",
-            "Money": 1,
+            "Kamoku": "受取手形",
+            "Money": 450,
             "isKasi": true
           }
         ]

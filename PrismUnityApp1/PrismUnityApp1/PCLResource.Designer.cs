@@ -69,25 +69,19 @@ namespace SiwakeApp {
         ///    &quot;Description&quot;: &quot;問題集1です&quot;,
         ///    &quot;Questions&quot;: [
         ///      {
-        ///        &quot;Description&quot;: &quot;1円かけで仕入れた&quot;,
-        ///        &quot;Hint&quot;: &quot;ヒント&quot;,
-        ///        &quot;Commentary&quot;: &quot;解説&quot;,
+        ///        &quot;Description&quot;: &quot;商品を450円で仕入れ、他社から受けた約束手形を裏書譲渡した。&quot;,
+        ///        &quot;Hint&quot;: &quot;約束手形をもらっているので「受取手形」がすでにある！&quot;,
+        ///        &quot;Commentary&quot;: &quot;仕入に対して、以前受け取っていた約束手形→受取手形を減らします。&quot;,
         ///        &quot;UseOffsetAnswer&quot;: false,
         ///        &quot;SiwakeList&quot;: [
         ///          {
         ///            &quot;Kamoku&quot;: &quot;仕入&quot;,
-        ///            &quot;Money&quot;: 1,
+        ///            &quot;Money&quot;: 450,
         ///            &quot;isKasi&quot;: false
         ///          },
         ///          {
-        ///            &quot;Kamoku&quot;: &quot;買掛金&quot;,
-        ///            &quot;Money&quot;: 1,
-        ///            &quot;isKasi&quot;: true
-        ///          }
-        ///        ]
-        ///      },
-        ///      {
-        ///   [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
+        ///            &quot;Kamoku&quot;: &quot;受取手形&quot;,
+        ///            &quot;Money&quot;: [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Questions {
             get {
