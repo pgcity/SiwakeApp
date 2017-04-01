@@ -4,6 +4,6 @@
     {
         public string Kamoku { get; set; }
         public int Money { get; set; }
-        public bool isKasi { get; set; }
+        public bool isKari { get; set; }
     }
 }

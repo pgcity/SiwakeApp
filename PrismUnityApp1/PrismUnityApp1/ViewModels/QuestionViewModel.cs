@@ -11,7 +11,15 @@ namespace SiwakeApp.ViewModels
 {
     public class QuestionViewModel : BindableBase
     {
-        private void OnTextChanged(object sender, EventArgs e)
+        public void OnTextChanged(object sender, EventArgs e)
+        {
+            UpdateEmptyCell();
+        }
+
+        /// <summary>
+        /// 空の入力欄を調整する
+        /// </summary>
+        protected void UpdateEmptyCell()
         {
             //リストが空の場合
             if (KariList.Count == 0)
@@ -20,13 +28,14 @@ namespace SiwakeApp.ViewModels
             }
             else
             {
-                //最終アイテムが空でない場合
-                if (KariList[KariList.Count - 1].IsFullInput())
+                //空欄追加条件 : 最終アイテムが空でない場合
+                if (!Confirmed && KariList[KariList.Count - 1].IsFullInput())
                 {
                     KariList.Add(new SiwakeKamokuViewModel("", "", OnTextChanged));
                 }
-                //最終から2番目のアイテムが空の場合
-                while (KariList.Count >= 2 && KariList[KariList.Count - 2].IsEmpty())
+                //空欄削除条件 : 最終から2番目のアイテムが空の場合
+                var delIndex = (Confirmed) ? 1 : 2;
+                while (KariList.Count >= delIndex && KariList[KariList.Count - delIndex].IsEmpty())
                 {
                     KariList.RemoveAt(KariList.Count - 1);
                 }
@@ -39,18 +48,20 @@ namespace SiwakeApp.ViewModels
             }
             else
             {
-                //最終アイテムが空でない場合
-                if (KashiList[KashiList.Count - 1].IsFullInput())
+                //空欄追加条件 : 最終アイテムが空でない場合
+                if (!Confirmed && KashiList[KashiList.Count - 1].IsFullInput())
                 {
                     KashiList.Add(new SiwakeKamokuViewModel("", "", OnTextChanged));
                 }
-                //最終から2番目のアイテムが空の場合
-                while (KashiList.Count >= 2 && KashiList[KashiList.Count - 2].IsEmpty())
+                //空欄削除条件 : 最終から2番目のアイテムが空の場合
+                var delIndex = (Confirmed) ? 1 : 2;
+                while (KashiList.Count >= delIndex && KashiList[KashiList.Count - delIndex].IsEmpty())
                 {
                     KashiList.RemoveAt(KashiList.Count - 1);
                 }
             }
         }
+
         public QuestionViewModel(QuestionInfo questionInfo)
         {
             Question = questionInfo;
@@ -68,7 +79,12 @@ namespace SiwakeApp.ViewModels
                 return;
             }
             Confirmed = true;
-            ResultText = "正解";
+            UpdateEmptyCell();
+
+            var check = new SiwakeCheck(this);
+            ResultText = check.ResultText;
+
+
         }
 
         public QuestionInfo Question

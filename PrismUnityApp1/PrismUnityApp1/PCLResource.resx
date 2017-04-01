@@ -133,12 +133,12 @@
           {
             "Kamoku": "仕入",
             "Money": 450,
-            "isKasi": false
+            "isKari": true
           },
           {
             "Kamoku": "受取手形",
             "Money": 450,
-            "isKasi": true
+            "isKari": false
           }
         ]
       },
@@ -151,12 +151,12 @@
           {
             "Kamoku": "仕入",
             "Money": 2,
-            "isKasi": false
+            "isKari": true
           },
           {
             "Kamoku": "買掛金",
             "Money": 2,
-            "isKasi": true
+            "isKari": false
           }
         ]
       }
@@ -176,12 +176,12 @@
           {
             "Kamoku": "仕入",
             "Money": 1,
-            "isKasi": false
+            "isKari": true
           },
           {
             "Kamoku": "買掛金",
             "Money": 1,
-            "isKasi": true
+            "isKari": false
           }
         ]
       }

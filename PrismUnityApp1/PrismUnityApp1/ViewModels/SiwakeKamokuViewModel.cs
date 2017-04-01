@@ -6,6 +6,14 @@ namespace SiwakeApp
 {
     public class SiwakeKamokuViewModel : BindableBase
     {
+        public enum ItemType
+        {
+            Normal,
+            Correct,
+            Wrong,
+            Add
+        }
+
         public EventHandler OnTextChanged;
 
         private string kamoku;
@@ -23,6 +31,26 @@ namespace SiwakeApp
             get { return money; }
             set {
                 this.SetProperty(ref this.money, value);
+            }
+        }
+
+        private ItemType kamokuType = ItemType.Normal;
+        public ItemType KamokuType
+        {
+            get { return kamokuType; }
+            set
+            {
+                this.SetProperty(ref kamokuType, value);
+            }
+        }
+
+        private ItemType moneyType = ItemType.Normal;
+        public ItemType MoneyType
+        {
+            get { return moneyType; }
+            set
+            {
+                this.SetProperty(ref moneyType, value);
             }
         }
 

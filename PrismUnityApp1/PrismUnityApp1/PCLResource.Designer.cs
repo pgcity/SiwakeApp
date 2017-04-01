@@ -77,11 +77,11 @@ namespace SiwakeApp {
         ///          {
         ///            &quot;Kamoku&quot;: &quot;仕入&quot;,
         ///            &quot;Money&quot;: 450,
-        ///            &quot;isKasi&quot;: false
+        ///            &quot;isKari&quot;: true
         ///          },
         ///          {
         ///            &quot;Kamoku&quot;: &quot;受取手形&quot;,
-        ///            &quot;Money&quot;: [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
+        ///            &quot;Money&quot;:  [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Questions {
             get {

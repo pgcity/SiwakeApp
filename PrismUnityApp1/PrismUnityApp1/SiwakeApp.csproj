@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AppearingBehavior.cs" />
+    <Compile Include="ItemTypeColorConverter.cs" />
     <Compile Include="NegateBooleanConverter.cs" />
     <Compile Include="PCLResource.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -44,6 +45,7 @@
     </Compile>
     <Compile Include="QuestionInfo.cs" />
     <Compile Include="QuestionModel.cs" />
+    <Compile Include="SiwakeCheck.cs" />
     <Compile Include="ViewModels\ResultPageViewModel.cs" />
     <Compile Include="Views\QuestionPage2.xaml.cs">
       <DependentUpon>QuestionPage2.xaml</DependentUpon>
