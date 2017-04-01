@@ -70,7 +70,7 @@ namespace SiwakeApp.ViewModels
         }
 
         // 問題ごとに採点する
-        private bool checkPerQuestion;
+        private bool checkPerQuestion = true;
         public bool CheckPerQuestion
         {
             get { return checkPerQuestion; }
