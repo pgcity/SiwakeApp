@@ -115,5 +115,6 @@ namespace SiwakeApp.ViewModels
                 CheckPerQuestion = (bool)StartOption["CheckPerQuestion"];
             }
         }
+
     }
 }

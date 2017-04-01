@@ -92,7 +92,7 @@ namespace SiwakeApp.ViewModels
 
         public void OnNavigatedTo(NavigationParameters parameters)
         {
-            if(parameters.Count > 0 && !parameters.ContainsKey("PrevPage"))
+            if (parameters.Count > 0 && !parameters.ContainsKey("PrevPage"))
             {
                 return;
             }

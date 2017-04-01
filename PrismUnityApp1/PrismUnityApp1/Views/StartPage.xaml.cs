@@ -11,5 +11,17 @@ namespace SiwakeApp.Views
         {
             InitializeComponent();
         }
+
+        private void ContentPage_Appearing(object sender, System.EventArgs e)
+        {
+            if (Device.OS == TargetPlatform.Windows)
+            {
+                var vm = BindingContext as StartPageViewModel;
+                if(vm != null)
+                {
+                    vm.RootViewModel.IsPresented = true;
+                }
+            }
+        }
     }
 }
