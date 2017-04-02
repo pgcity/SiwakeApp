@@ -160,6 +160,14 @@
             "isKari": false
           }
         ]
+      },
+      {
+        "Description": "今度B社の商品を買うと社長と口約束した",
+        "Hint": "ヒント",
+        "Commentary": "解説",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+        ]
       }
     ]
   },

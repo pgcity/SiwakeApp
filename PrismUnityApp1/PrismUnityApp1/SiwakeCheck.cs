@@ -74,7 +74,6 @@ namespace SiwakeApp
                     targetList.Add(addItem);
                 }
             }
-
             var kariWrongItems = from kariWrong in ViewModel.KariList
                             where kariWrong.KamokuType != SiwakeKamokuViewModel.ItemType.Correct
                             || kariWrong.MoneyType != SiwakeKamokuViewModel.ItemType.Correct
@@ -84,16 +83,42 @@ namespace SiwakeApp
                                  || kasiWrong.MoneyType != SiwakeKamokuViewModel.ItemType.Correct
                                  select kasiWrong;
 
-            if(kariWrongItems.Count() > 0 || kasiWrongItems.Count() > 0)
+            
+            if (ViewModel.Question.SiwakeList.Count == 0)
             {
-                ResultText = "不正解";
+                //仕訳なしの場合に「仕訳なし」が書いてあるか
+                var noShiwakeItems = from noShiwake in ViewModel.KariList
+                                    where noShiwake.Kamoku == "仕訳なし"
+                                    && noShiwake.Money == ""
+                                    select noShiwake;
+                foreach(var noShiwakeItem in noShiwakeItems)
+                {
+                    noShiwakeItem.KamokuType = SiwakeKamokuViewModel.ItemType.Correct;
+                    noShiwakeItem.MoneyType = SiwakeKamokuViewModel.ItemType.Correct;
+                }
+
+                if(noShiwakeItems.Count() == 0)
+                {
+                    //仕訳なしがなかったので追加
+                    var addItem = new SiwakeKamokuViewModel(
+                                    "仕訳なし", "", ViewModel.OnTextChanged);
+                    addItem.KamokuType = SiwakeKamokuViewModel.ItemType.Add;
+                    addItem.MoneyType = SiwakeKamokuViewModel.ItemType.Add;
+                    ViewModel.KariList.Add(addItem);
+                }
+            }
+
+            if (kariWrongItems.Count() > 0 || kasiWrongItems.Count() > 0)
+            {
                 IsCorrect = false;
             }
-            else {
-                ResultText = "正解";
+            else
+            {
                 IsCorrect = true;
             }
-            
+
+
+            ResultText = (IsCorrect) ? "正解" : "不正解";
             Checked = true;
         }
 
