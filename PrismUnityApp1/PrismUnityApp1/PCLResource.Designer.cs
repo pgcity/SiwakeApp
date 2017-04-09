@@ -64,24 +64,26 @@ namespace SiwakeApp {
         /// <summary>
         ///   [
         ///  {
-        ///    &quot;SetName&quot;: &quot;問題集1&quot;,
+        ///    &quot;SetName&quot;: &quot;商品売買&quot;,
         ///    &quot;Grade&quot;: &quot;3級&quot;,
-        ///    &quot;Description&quot;: &quot;問題集1です&quot;,
-        ///    &quot;Comment&quot;: &quot;解答後のコメントです&quot;,
+        ///    &quot;Description&quot;: &quot;商品売買の問題を集めました。&quot;,
+        ///    &quot;Comment&quot;: &quot;&quot;,
         ///    &quot;Questions&quot;: [
         ///      {
-        ///        &quot;Description&quot;: &quot;商品を450円で仕入れ、他社から受けた約束手形を裏書譲渡した。&quot;,
-        ///        &quot;Hint&quot;: &quot;約束手形をもらっているので「受取手形」がすでにある！&quot;,
-        ///        &quot;Commentary&quot;: &quot;仕入に対して、以前受け取っていた約束手形→受取手形を減らします。&quot;,
+        ///        &quot;Description&quot;: &quot;商品￥200を掛けで仕入れた。当社では商品売買取引を分記法で記帳している。&quot;,
+        ///        &quot;Hint&quot;: &quot;&quot;,
+        ///        &quot;Commentary&quot;: &quot;&quot;,
         ///        &quot;UseOffsetAnswer&quot;: false,
         ///        &quot;SiwakeList&quot;: [
         ///          {
-        ///            &quot;Kamoku&quot;: &quot;仕入&quot;,
-        ///            &quot;Money&quot;: 450,
+        ///            &quot;Kamoku&quot;: &quot;商品&quot;,
+        ///            &quot;Money&quot;: 200,
         ///            &quot;isKari&quot;: true
         ///          },
         ///          {
-        ///            &quot;Kamoku&quot;:  [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
+        ///            &quot;Kamoku&quot;: &quot;買掛金&quot;,
+        ///            &quot;Money&quot;: 200,
+        ///            &quot;isKari [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Questions {
             get {

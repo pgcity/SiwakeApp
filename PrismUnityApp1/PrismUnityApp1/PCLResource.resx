@@ -120,77 +120,1115 @@
   <data name="Questions" xml:space="preserve">
     <value>[
   {
-    "SetName": "問題集1",
+    "SetName": "商品売買",
     "Grade": "3級",
-    "Description": "問題集1です",
-    "Comment": "解答後のコメントです",
+    "Description": "商品売買の問題を集めました。",
+    "Comment": "",
     "Questions": [
       {
-        "Description": "商品を450円で仕入れ、他社から受けた約束手形を裏書譲渡した。",
-        "Hint": "約束手形をもらっているので「受取手形」がすでにある！",
-        "Commentary": "仕入に対して、以前受け取っていた約束手形→受取手形を減らします。",
+        "Description": "商品￥200を掛けで仕入れた。当社では商品売買取引を分記法で記帳している。",
+        "Hint": "",
+        "Commentary": "",
         "UseOffsetAnswer": false,
         "SiwakeList": [
           {
-            "Kamoku": "仕入",
-            "Money": 450,
-            "isKari": true
-          },
-          {
-            "Kamoku": "受取手形",
-            "Money": 450,
-            "isKari": false
-          }
-        ]
-      },
-      {
-        "Description": "2円かけで仕入れた",
-        "Hint": "ヒント",
-        "Commentary": "解説",
-        "UseOffsetAnswer": false,
-        "SiwakeList": [
-          {
-            "Kamoku": "仕入",
-            "Money": 2,
+            "Kamoku": "商品",
+            "Money": 200,
             "isKari": true
           },
           {
             "Kamoku": "買掛金",
-            "Money": 2,
+            "Money": 200,
             "isKari": false
           }
         ]
       },
       {
-        "Description": "今度B社の商品を買うと社長と口約束した",
-        "Hint": "ヒント",
-        "Commentary": "解説",
+        "Description": "商品￥200を仕入れ、￥100は小切手を振り出し、残りは掛けとした。当社では商品売買取引を三分法で記帳している。",
+        "Hint": "",
+        "Commentary": "",
         "UseOffsetAnswer": false,
         "SiwakeList": [
+          {
+            "Kamoku": "仕入",
+            "Money": 200,
+            "isKari": true
+          },
+          {
+            "Kamoku": "当座預金",
+            "Money": 100,
+            "isKari": false
+          },
+          {
+            "Kamoku": "買掛金",
+            "Money": 100,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "商品￥500（原価￥200）を売上げ、￥200は現金で受け取り、残りは掛けとした。当社では商品売買取引を三分法で記帳している。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "現金",
+            "Money": 200,
+            "isKari": true
+          },
+          {
+            "Kamoku": "売掛金",
+            "Money": 300,
+            "isKari": true
+          },
+          {
+            "Kamoku": "売上",
+            "Money": 500,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "商品￥500（原価￥200）を売上げ、￥200は現金で受け取り、残りは掛けとした。当社では商品売買取引を分記法で記帳している。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "現金",
+            "Money": 200,
+            "isKari": true
+          },
+          {
+            "Kamoku": "売掛金",
+            "Money": 300,
+            "isKari": true
+          },
+          {
+            "Kamoku": "商品",
+            "Money": 200,
+            "isKari": false
+          },
+          {
+            "Kamoku": "商品売買益",
+            "Money": 300,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "得意先の売掛金￥20000を現金で回収した",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "現金",
+            "Money": 20000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "売掛金",
+            "Money": 20000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "得意先の売掛金￥20000を得意先振り出しの約束手形で回収した",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "受取手形",
+            "Money": 20000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "売掛金",
+            "Money": 20000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "買掛金￥15000を現金で支払った",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "買掛金",
+            "Money": 15000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "現金",
+            "Money": 15000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "仕入先への掛代金￥8000について、仕入先を名宛人とする約束手形を振り出して支払った",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "買掛金",
+            "Money": 8000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "支払手形",
+            "Money": 15000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "商品￥500を仕入れ、小切手を振り出した。現在の当座預金残高は￥300であり、当座借越契約を結んでいる。商品売買取引は三分法で記帳している。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "仕入",
+            "Money": 500,
+            "isKari": true
+          },
+          {
+            "Kamoku": "当座預金",
+            "Money": 300,
+            "isKari": false
+          },
+          {
+            "Kamoku": "当座借越",
+            "Money": 200,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "商品を￥500で売り上げ、小切手で受け取り、直ちに当座預金に預け入れた。なお当座借越が￥300ある。商品売買取引は三分法で記帳している。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "当座預金",
+            "Money": 200,
+            "isKari": true
+          },
+          {
+            "Kamoku": "当座借越",
+            "Money": 300,
+            "isKari": true
+          },
+          {
+            "Kamoku": "売上",
+            "Money": 500,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "商品￥4,500を売上げ、掛けとした。発送費￥500を現金で支払った。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "売掛金",
+            "Money": 4500,
+            "isKari": true
+          },
+          {
+            "Kamoku": "発送費",
+            "Money": 500,
+            "isKari": true
+          },
+          {
+            "Kamoku": "売上",
+            "Money": 4500,
+            "isKari": false
+          },
+          {
+            "Kamoku": "現金",
+            "Money": 500,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "得意先に掛けで売り上げた商品のうち一部が破損していたため、￥1,000の値引きを受け入れた。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "売上",
+            "Money": 1000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "売掛金",
+            "Money": 1000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "得意先に掛けで売り上げた商品のうち￥1,500が品違いのため返品されてきた",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "売上",
+            "Money": 1500,
+            "isKari": true
+          },
+          {
+            "Kamoku": "売掛金",
+            "Money": 1500,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "商品￥1,000を掛けで仕入れた。引取運賃￥100を現金で支払った。当社では三分法で記帳している。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "仕入",
+            "Money": 1100,
+            "isKari": true
+          },
+          {
+            "Kamoku": "買掛金",
+            "Money": 1100,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "仕入れた商品￥500を、不良のため返品した。商品売買は三分法による。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "買掛金",
+            "Money": 500,
+            "isKari": true
+          },
+          {
+            "Kamoku": "仕入",
+            "Money": 500,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "B商店から商品￥50,000を仕入れ、代金のうち￥30,000はC商店振り出しの約束手形を裏書譲渡し、残額はB商店宛の約束手形を振り出した。取引は三分法による。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "仕入",
+            "Money": 50000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "受取手形",
+            "Money": 30000,
+            "isKari": false
+          },
+          {
+            "Kamoku": "支払手形",
+            "Money": 20000,
+            "isKari": false
+          }
         ]
       }
     ]
   },
   {
-    "SetName": "問題集2",
+    "SetName": "固定資産",
     "Grade": "3級",
-    "Description": "問題集2です",
-    "Comment": "解答後のコメントです",
+    "Description": "固定資産に関する問題を集めました。",
+    "Comment": "",
     "Questions": [
       {
-        "Description": "1円かけで仕入れた",
-        "Hint": "ヒント",
-        "Commentary": "解説",
+        "Description": "車両1台を￥1,000,000で購入し、代金のうち￥500,000を現金で支払い、残額は来月より5か月の分割払いとした",
+        "Hint": "",
+        "Commentary": "",
         "UseOffsetAnswer": false,
         "SiwakeList": [
           {
-            "Kamoku": "仕入",
-            "Money": 1,
+            "Kamoku": "車両",
+            "Money": 1000000,
             "isKari": true
           },
           {
-            "Kamoku": "買掛金",
-            "Money": 1,
+            "Kamoku": "現金",
+            "Money": 500000,
+            "isKari": false
+          },
+          {
+            "Kamoku": "未払金",
+            "Money": 500000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "建物￥6,000,000を購入し、￥1,000,000を小切手で支払い、残額は来月より分割で行うことにした。また、手数料￥100,000と登記料￥100,000を現金で支払った。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "建物",
+            "Money": 6200000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "当座預金",
+            "Money": 1000000,
+            "isKari": false
+          },
+          {
+            "Kamoku": "未払金",
+            "Money": 5000000,
+            "isKari": false
+          },
+          {
+            "Kamoku": "現金",
+            "Money": 200000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "パソコン￥1,000,000を購入し、小切手で支払った。また、引取運賃￥10,000を現金で支払った。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "備品",
+            "Money": 1010000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "当座預金",
+            "Money": 1000000,
+            "isKari": false
+          },
+          {
+            "Kamoku": "現金",
+            "Money": 10000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "帳簿価額￥10,000,000の土地を￥8,000,000で売却した。代金は小切手で受け取り、当座預金に預け入れた。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "当座預金",
+            "Money": 8000000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "土地売却損",
+            "Money": 2000000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "土地",
+            "Money": 10000000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "決算にあたり、当期首に取得した建物の減価償却を行う。取得価額￥1,000,000、耐用年数20年、残存価額は取得原価の10％、定額法、間接法で行う。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "減価償却費",
+            "Money": 45000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "建物減価償却累計額",
+            "Money": 45000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "決算にあたり、当期首に取得した建物の減価償却を行う。取得価額￥1,000,000、耐用年数20年、残存価額はゼロ、定額法、直接法で行う。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "減価償却費",
+            "Money": 50000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "建物",
+            "Money": 50000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "X2年3月31日、決算にあたり、X1年10月1日に取得した備品の減価償却を行う。取得価額￥500,000、耐用年数5年、残存価額は取得原価の10％、定額法、間接法で行う。初年度の償却額は月割計算による。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "減価償却費",
+            "Money": 45000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "備品減価償却累計額",
+            "Money": 45000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "X4年3月31日、決算にあたり、X1年10月1日に取得した備品の減価償却を行う。減価償却前の備品の簿価は￥438,000、耐用年数5年、残存価額は取得原価の10％、定額法、直接法で行う。初年度の償却額は月割計算による。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "減価償却費",
+            "Money": 108000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "備品",
+            "Money": 108000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "6月30日、備品￥400,000（減価償却累計額￥200,000）を￥250,000で売却し、代金は現金で受け取った。決算日は3月31日。この備品は、残存価額０、耐用年数8年、定額法で減価償却している。減価償却は月割計算による。",
+        "Hint": "",
+        "Commentary": "これでいいんだっけ",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "現金",
+            "Money": 250000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "減価償却費",
+            "Money": 12500,
+            "isKari": true
+          },
+          {
+            "Kamoku": "減価償却累計額",
+            "Money": 212500,
+            "isKari": true
+          },
+          {
+            "Kamoku": "備品",
+            "Money": 400000,
+            "isKari": false
+          },
+          {
+            "Kamoku": "備品売却益",
+            "Money": 75000,
+            "isKari": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "SetName": "純資産",
+    "Grade": "3級",
+    "Description": "資本金や引出金に関する問題です",
+    "Comment": "",
+    "Questions": [
+      {
+        "Description": "現金￥300と建物￥100を元入れして開業した",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "現金",
+            "Money": 300,
+            "isKari": true
+          },
+          {
+            "Kamoku": "建物",
+            "Money": 100,
+            "isKari": true
+          },
+          {
+            "Kamoku": "資本金",
+            "Money": 400,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "事業主の事業所得に対する所得税￥60,000を店の現金で納付した。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "引出金",
+            "Money": 60000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "現金",
+            "Money": 60000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "水道光熱費￥20,000を当座預金口座から支払った。支払額のうち￥5,000は事業主個人の負担分である。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "水道光熱費",
+            "Money": 15000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "引出金",
+            "Money": 5000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "当座預金",
+            "Money": 20000,
+            "isKari": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "SetName": "貸付金・借入金",
+    "Grade": "3級",
+    "Description": "貸付金・借入金に関する問題を集めました",
+    "Comment": "",
+    "Questions": [
+      {
+        "Description": "借入金￥10000を利息￥500とともに現金で返済した",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "支払利息",
+            "Money": 500,
+            "isKari": true
+          },
+          {
+            "Kamoku": "借入金",
+            "Money": 10000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "現金",
+            "Money": 10500,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "X年9月30日、A社に対する貸付金を利息とともに小切手で回収し、当座預金に預け入れた。\n貸付日 X年4月1日、金額 ￥1,000,000。利率は年5％。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "当座預金",
+            "Money": 1025000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "貸付金",
+            "Money": 1000000,
+            "isKari": false
+          },
+          {
+            "Kamoku": "受取利息",
+            "Money": 25000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "X年4月1日、B社から￥1,000,000を借入れ、当座預金に預け入れた。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "当座預金",
+            "Money": 1000000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "借入金",
+            "Money": 1000000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "X年9月30日、B社に対する借入金を利息とともに返済し、小切手を振り出した。\n借入日 X年4月1日、金額 ￥1,000,000。利率は年5％。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "借入金",
+            "Money": 1000000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "支払利息",
+            "Money": 25000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "当座預金",
+            "Money": 1025000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "X年4月1日、A社に対して￥1,000,000を貸し付け、小切手を振り出した。返済日はX年9月30日、利率は年5％。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "貸付金",
+            "Money": 1000000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "当座預金",
+            "Money": 1000000,
+            "isKari": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "SetName": "売上債権",
+    "Grade": "3級",
+    "Description": "売掛金・受取手形・貸し倒れに関する問題を集めました",
+    "Comment": "",
+    "Questions": [
+      {
+        "Description": "得意先のA商店が倒産し、同店への売掛金￥50,000が回収不能になった。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "貸倒損失",
+            "Money": 50000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "売掛金",
+            "Money": 50000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "得意先のA商店が倒産し、前年度に売り上げた同店への売掛金￥50,000が回収不能になった。ただし、貸倒引当金残高が￥10,000ある。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "貸倒損失",
+            "Money": 40000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "貸倒引当金",
+            "Money": 10000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "売掛金",
+            "Money": 50000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "決算にあたり、売掛金￥100,000、受取手形￥80,000に対し、5％の貸し倒れを見積もった。なお、貸倒引当金残高が￥5,000ある。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "貸倒引当金繰入",
+            "Money": 4000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "貸倒引当金",
+            "Money": 4000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "B商店振り出しの約束手形￥10,000を銀行で割引き、割引料￥1,000を差し引かれた手取り金を受け取り、当座預金に預け入れた。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "手形売却損",
+            "Money": 1000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "当座預金",
+            "Money": 9000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "受取手形",
+            "Money": 10000,
+            "isKari": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "SetName": "収益と費用",
+    "Grade": "3級",
+    "Description": "簡単な収益・費用の取引を集めました。",
+    "Comment": "",
+    "Questions": [
+      {
+        "Description": "取引の仲介手数料として、￥500を現金で受け取った",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "現金",
+            "Money": 500,
+            "isKari": true
+          },
+          {
+            "Kamoku": "受取手数料",
+            "Money": 500,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "土地の賃借料￥50000を現金で支払った",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "支払地代",
+            "Money": 50000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "現金",
+            "Money": 50000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "業界紙に広告を出し、￥10000を現金で支払った。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "広告宣伝費",
+            "Money": 10000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "現金",
+            "Money": 10000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "切手とはがき￥1340を購入し、現金で支払った",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "通信費",
+            "Money": 1340,
+            "isKari": true
+          },
+          {
+            "Kamoku": "現金",
+            "Money": 1340,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "従業員給料￥1,000,000の支払いとして、所得税の源泉徴収額￥50,000、立替金￥60,000を差し引き、残額を当座預金から支払った。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "給料",
+            "Money": 1000000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "所得税預り金",
+            "Money": 50000,
+            "isKari": false
+          },
+          {
+            "Kamoku": "従業員立替金",
+            "Money": 60000,
+            "isKari": false
+          },
+          {
+            "Kamoku": "当座預金",
+            "Money": 890000,
+            "isKari": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "SetName": "現金",
+    "Grade": "3級",
+    "Description": "現金過不足・小口現金・仮払金など",
+    "Comment": "",
+    "Questions": [
+      {
+        "Description": "現金の実際有高を調べたところ、帳簿残高より￥500多いことがわかった。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "現金",
+            "Money": 500,
+            "isKari": true
+          },
+          {
+            "Kamoku": "現金過不足",
+            "Money": 500,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "現金の実際有高が帳簿残高より￥500多かったため原因を調査していた。調査の結果、配当金領収書￥1000と、封筒代￥500の記入漏れによるものと判明した。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "現金過不足",
+            "Money": 500,
+            "isKari": true
+          },
+          {
+            "Kamoku": "消耗品費",
+            "Money": 500,
+            "isKari": true
+          },
+          {
+            "Kamoku": "受取配当金",
+            "Money": 1000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "現金の実際有高が帳簿残高より￥500少なかったため原因を調査していたが、原因不明のため費用として処理することにした",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "雑損",
+            "Money": 500,
+            "isKari": true
+          },
+          {
+            "Kamoku": "現金過不足",
+            "Money": 500,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "当社では定額資金前渡制を採用し、￥100,000を用度係に渡している。以下の支払い報告があり、小切手を振り出し資金を補給した。\n旅費交通費￥20,000\n通信費￥5,000\n消耗品費￥5,000\n雑費￥10,000",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "旅費交通費",
+            "Money": 20000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "通信費",
+            "Money": 5000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "消耗品費",
+            "Money": 5000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "雑費",
+            "Money": 10000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "当座預金",
+            "Money": 40000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "従業員の出張にあたり、出張費用の概算額￥30,000を現金で支払った",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "仮払金",
+            "Money": 30000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "現金",
+            "Money": 30000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "出張先から従業員が帰社し、旅費として前渡しした金額￥30,000のうち、残額￥3,000を受け取った",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "旅費交通費",
+            "Money": 27000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "現金",
+            "Money": 3000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "仮払金",
+            "Money": 30000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "出張中の従業員から、当座預金に内容不明の入金￥100,000があった。",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "当座預金",
+            "Money": 100000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "仮受金",
+            "Money": 100000,
+            "isKari": false
+          }
+        ]
+      },
+      {
+        "Description": "出張中の従業員から入金された￥100,000は、売掛金の回収￥50,000と、商品注文の手付金￥50,000であった",
+        "Hint": "",
+        "Commentary": "",
+        "UseOffsetAnswer": false,
+        "SiwakeList": [
+          {
+            "Kamoku": "仮受金",
+            "Money": 100000,
+            "isKari": true
+          },
+          {
+            "Kamoku": "売掛金",
+            "Money": 50000,
+            "isKari": false
+          },
+          {
+            "Kamoku": "前受金",
+            "Money": 50000,
             "isKari": false
           }
         ]
