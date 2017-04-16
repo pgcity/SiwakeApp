@@ -36,7 +36,7 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <ListView Grid.Column="0" ItemsSource="{Binding KariList}">
+                        <ListView Grid.Column="0" ItemsSource="{Binding KariList}" CachingStrategy="RecycleElement">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
@@ -68,7 +68,7 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                        <ListView Grid.Column="1" ItemsSource="{Binding KashiList}">
+                        <ListView Grid.Column="1" ItemsSource="{Binding KashiList}" CachingStrategy="RecycleElement">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
