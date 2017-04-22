@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net.Http;
 
 namespace SiwakeApp
 {
@@ -14,12 +15,36 @@ namespace SiwakeApp
 
         public QuestionModel()
         {
-            LoadQuestion();
+            LoadQuestion(PCLResource.Questions);
         }
 
-        public async void LoadQuestion()
+        public QuestionModel(string QuestionUrl)
         {
-            Questions = Newtonsoft.Json.JsonConvert.DeserializeObject<List<QuestionSetInfo>>(PCLResource.Questions);
+            if (QuestionUrl == "")
+            {
+                LoadQuestion(PCLResource.Questions);
+            }
+            else
+            {
+                using (var client = new HttpClient())
+                {
+                    try
+                    {
+                        var json = client.GetStringAsync(QuestionUrl);
+                        json.Wait();
+                        LoadQuestion(json.Result);
+                    }
+                    catch (Exception)
+                    {
+                        LoadQuestion(PCLResource.Questions);
+                    }
+                }
+            }
+        }
+
+        public void LoadQuestion(string json)
+        {
+            Questions = Newtonsoft.Json.JsonConvert.DeserializeObject<List<QuestionSetInfo>>(json);
         }
     }
 }

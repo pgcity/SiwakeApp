@@ -9,7 +9,7 @@
            FontSize="18"
            Margin="10,36,0,5"/>
         </Frame>
-
+        <Button Text="問題集URLを開く" Command="{Binding UrlCommand}"/>
         <ListView ItemsSource="{Binding Menus}"
               VerticalOptions="FillAndExpand"
               ItemSelected="ListViewMenu_ItemSelected">

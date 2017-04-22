@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using Prism.Commands;
 using System.Windows.Input;
+using System.Threading.Tasks;
 
 namespace SiwakeApp.ViewModels
 {
@@ -16,14 +17,27 @@ namespace SiwakeApp.ViewModels
         {
             this.NavigationService = navigationService;
             Menus = new ObservableCollection<QuestionSetInfo>(QuestionModel.Questions);
+
+            UrlCommand = new Command(async () =>
+            {
+                await GotoUrlInput();
+            });
         }
 
         //コマンド
+        public ICommand UrlCommand
+        {
+            get;
+        }
 
         //プロパティ
         private QuestionModel QuestionModel { get; set; } = new QuestionModel();
 
-        public ObservableCollection<QuestionSetInfo> Menus { get; }
+        private ObservableCollection<QuestionSetInfo> menus;
+        public ObservableCollection<QuestionSetInfo> Menus {
+            get { return menus; }
+            set { SetProperty(ref menus, value); }
+        }
 
         private INavigationService NavigationService { get; }
 
@@ -62,6 +76,8 @@ namespace SiwakeApp.ViewModels
 
         public object StartOption { get; private set; }
 
+        public string QuestionUrl { get; set; }
+
         public void ResetPage()
         {
             //CurrentQuestionPage = CurrentQuestionList[0];
@@ -85,6 +101,14 @@ namespace SiwakeApp.ViewModels
             this.NavigationService.NavigateAsync("NavigationPage/StartPage", param);
         }
 
+        //URL入力へ
+        private Task GotoUrlInput()
+        {
+            var param = new NavigationParameters();
+            param["QuestionUrl"] = QuestionUrl;
+            return this.NavigationService.NavigateAsync("/UrlInputPage", param);
+        }
+
         // ナビゲーション
         public void OnNavigatedFrom(NavigationParameters parameters)
         {
@@ -92,9 +116,23 @@ namespace SiwakeApp.ViewModels
 
         public void OnNavigatedTo(NavigationParameters parameters)
         {
-            if (parameters.Count > 0 && !parameters.ContainsKey("PrevPage"))
+            if (parameters.Count > 0 
+                && !parameters.ContainsKey("PrevPage")
+                && !parameters.ContainsKey("QuestionUrl"))
             {
                 return;
+            }
+
+            if (parameters.ContainsKey("QuestionUrl"))
+            {
+                //変化するときは要更新
+                var newUrl = parameters["QuestionUrl"] as string;
+                if (QuestionUrl != newUrl)
+                {
+                    QuestionUrl = newUrl;
+                    QuestionModel = new QuestionModel(QuestionUrl);
+                    Menus = new ObservableCollection<QuestionSetInfo>(QuestionModel.Questions);
+                }
             }
 
             QuestionSetInfo menuItem = null;

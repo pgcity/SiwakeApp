@@ -22,6 +22,7 @@ namespace SiwakeApp
             Container.RegisterTypeForNavigation<ResultPage>();
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<QuestionPage2>();
+            Container.RegisterTypeForNavigation<UrlInputPage>();
         }
     }
 }
