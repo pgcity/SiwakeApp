@@ -101,7 +101,7 @@
                             </ListView.ItemTemplate>
                         </ListView>
                     </Grid>
-                    <Button Text="{Binding AnswerButtonLabel}}" Command="{Binding BindingContext.AnswerCommand, Source={x:Reference root}}"></Button>
+                    <Button Text="{Binding AnswerButtonLabel}" Command="{Binding BindingContext.AnswerCommand, Source={x:Reference root}}"></Button>
                 </StackLayout>
             </ContentPage>
         </DataTemplate>
