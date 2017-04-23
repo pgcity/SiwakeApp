@@ -70,20 +70,19 @@ namespace SiwakeApp {
         ///    &quot;Comment&quot;: &quot;&quot;,
         ///    &quot;Questions&quot;: [
         ///      {
-        ///        &quot;Description&quot;: &quot;商品￥200を掛けで仕入れた。当社では商品売買取引を分記法で記帳している。&quot;,
+        ///        &quot;Description&quot;: &quot;大宮商店より、商品30,000円を掛けで仕入れた。当社では商品売買取引を分記法で記帳している。&quot;,
         ///        &quot;Hint&quot;: &quot;&quot;,
-        ///        &quot;Commentary&quot;: &quot;&quot;,
+        ///        &quot;Commentary&quot;: &quot;分記法では商品勘定を使います。&quot;,
         ///        &quot;UseOffsetAnswer&quot;: false,
         ///        &quot;SiwakeList&quot;: [
         ///          {
         ///            &quot;Kamoku&quot;: &quot;商品&quot;,
-        ///            &quot;Money&quot;: 200,
+        ///            &quot;Money&quot;: 30000,
         ///            &quot;isKari&quot;: true
         ///          },
         ///          {
         ///            &quot;Kamoku&quot;: &quot;買掛金&quot;,
-        ///            &quot;Money&quot;: 200,
-        ///            &quot;isKari [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
+        ///            &quot;Money&quot; [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Questions {
             get {

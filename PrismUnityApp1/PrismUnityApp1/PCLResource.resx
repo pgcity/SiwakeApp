@@ -126,99 +126,99 @@
     "Comment": "",
     "Questions": [
       {
-        "Description": "商品￥200を掛けで仕入れた。当社では商品売買取引を分記法で記帳している。",
+        "Description": "大宮商店より、商品30,000円を掛けで仕入れた。当社では商品売買取引を分記法で記帳している。",
         "Hint": "",
-        "Commentary": "",
+        "Commentary": "分記法では商品勘定を使います。",
         "UseOffsetAnswer": false,
         "SiwakeList": [
           {
             "Kamoku": "商品",
-            "Money": 200,
+            "Money": 30000,
             "isKari": true
           },
           {
             "Kamoku": "買掛金",
-            "Money": 200,
+            "Money": 30000,
             "isKari": false
           }
         ]
       },
       {
-        "Description": "商品￥200を仕入れ、￥100は小切手を振り出し、残りは掛けとした。当社では商品売買取引を三分法で記帳している。",
+        "Description": "大和田商店より商品￥20,000を仕入れ、￥10,000は小切手を振り出し、残りは掛けとした。当社では商品売買取引を三分法で記帳している。",
         "Hint": "",
         "Commentary": "",
         "UseOffsetAnswer": false,
         "SiwakeList": [
           {
             "Kamoku": "仕入",
-            "Money": 200,
+            "Money": 20000,
             "isKari": true
           },
           {
             "Kamoku": "当座預金",
-            "Money": 100,
+            "Money": 10000,
             "isKari": false
           },
           {
             "Kamoku": "買掛金",
-            "Money": 100,
+            "Money": 10000,
             "isKari": false
           }
         ]
       },
       {
-        "Description": "商品￥500（原価￥200）を売上げ、￥200は現金で受け取り、残りは掛けとした。当社では商品売買取引を三分法で記帳している。",
+        "Description": "岩槻商店に商品￥50,000（原価￥20,000）を売上げ、￥20,000は現金で受け取り、残りは掛けとした。当社では商品売買取引を三分法で記帳している。",
         "Hint": "",
         "Commentary": "",
         "UseOffsetAnswer": false,
         "SiwakeList": [
           {
             "Kamoku": "現金",
-            "Money": 200,
+            "Money": 20000,
             "isKari": true
           },
           {
             "Kamoku": "売掛金",
-            "Money": 300,
+            "Money": 30000,
             "isKari": true
           },
           {
             "Kamoku": "売上",
-            "Money": 500,
+            "Money": 50000,
             "isKari": false
           }
         ]
       },
       {
-        "Description": "商品￥500（原価￥200）を売上げ、￥200は現金で受け取り、残りは掛けとした。当社では商品売買取引を分記法で記帳している。",
+        "Description": "豊春商店に商品￥60,000（原価￥30,000）を売上げ、￥20,000は現金で受け取り、残りは掛けとした。当社では商品売買取引を分記法で記帳している。",
         "Hint": "",
         "Commentary": "",
         "UseOffsetAnswer": false,
         "SiwakeList": [
           {
             "Kamoku": "現金",
-            "Money": 200,
+            "Money": 20000,
             "isKari": true
           },
           {
             "Kamoku": "売掛金",
-            "Money": 300,
+            "Money": 40000,
             "isKari": true
           },
           {
             "Kamoku": "商品",
-            "Money": 200,
+            "Money": 30000,
             "isKari": false
           },
           {
             "Kamoku": "商品売買益",
-            "Money": 300,
+            "Money": 30000,
             "isKari": false
           }
         ]
       },
       {
-        "Description": "得意先の売掛金￥20000を現金で回収した",
+        "Description": "八木崎商店への売掛金￥20,000を現金で回収した",
         "Hint": "",
         "Commentary": "",
         "UseOffsetAnswer": false,
@@ -236,7 +236,7 @@
         ]
       },
       {
-        "Description": "得意先の売掛金￥20000を得意先振り出しの約束手形で回収した",
+        "Description": "春日部商店の売掛金￥20,000を得意先振り出しの約束手形で回収した",
         "Hint": "",
         "Commentary": "",
         "UseOffsetAnswer": false,
@@ -254,7 +254,7 @@
         ]
       },
       {
-        "Description": "買掛金￥15000を現金で支払った",
+        "Description": "牛島商店への買掛金￥15,000を現金で支払った",
         "Hint": "",
         "Commentary": "",
         "UseOffsetAnswer": false,
@@ -272,7 +272,7 @@
         ]
       },
       {
-        "Description": "仕入先への掛代金￥8000について、仕入先を名宛人とする約束手形を振り出して支払った",
+        "Description": "仕入先桜井商店への掛代金￥8,000について、仕入先を名宛人とする約束手形を振り出して支払った",
         "Hint": "",
         "Commentary": "",
         "UseOffsetAnswer": false,
@@ -284,59 +284,59 @@
           },
           {
             "Kamoku": "支払手形",
-            "Money": 15000,
+            "Money": 8000,
             "isKari": false
           }
         ]
       },
       {
-        "Description": "商品￥500を仕入れ、小切手を振り出した。現在の当座預金残高は￥300であり、当座借越契約を結んでいる。商品売買取引は三分法で記帳している。",
+        "Description": "川間商店より商品￥500,000を仕入れ、小切手を振り出した。現在の当座預金残高は￥300,000であり、当座借越契約を結んでいる。商品売買取引は三分法で記帳している。",
         "Hint": "",
         "Commentary": "",
         "UseOffsetAnswer": false,
         "SiwakeList": [
           {
             "Kamoku": "仕入",
-            "Money": 500,
+            "Money": 500000,
             "isKari": true
           },
           {
             "Kamoku": "当座預金",
-            "Money": 300,
+            "Money": 300000,
             "isKari": false
           },
           {
             "Kamoku": "当座借越",
-            "Money": 200,
+            "Money": 200000,
             "isKari": false
           }
         ]
       },
       {
-        "Description": "商品を￥500で売り上げ、小切手で受け取り、直ちに当座預金に預け入れた。なお当座借越が￥300ある。商品売買取引は三分法で記帳している。",
+        "Description": "七光台商店に商品を￥500,000で売り上げ、小切手で受け取り、直ちに当座預金に預け入れた。なお当座借越が￥300,000ある。商品売買取引は三分法で記帳している。",
         "Hint": "",
         "Commentary": "",
         "UseOffsetAnswer": false,
         "SiwakeList": [
           {
             "Kamoku": "当座預金",
-            "Money": 200,
+            "Money": 200000,
             "isKari": true
           },
           {
             "Kamoku": "当座借越",
-            "Money": 300,
+            "Money": 300000,
             "isKari": true
           },
           {
             "Kamoku": "売上",
-            "Money": 500,
+            "Money": 500000,
             "isKari": false
           }
         ]
       },
       {
-        "Description": "商品￥4,500を売上げ、掛けとした。発送費￥500を現金で支払った。",
+        "Description": "清水商店に商品￥4,500を売上げ、掛けとした。発送費￥500を現金で支払った。",
         "Hint": "",
         "Commentary": "",
         "UseOffsetAnswer": false,
@@ -364,7 +364,7 @@
         ]
       },
       {
-        "Description": "得意先に掛けで売り上げた商品のうち一部が破損していたため、￥1,000の値引きを受け入れた。",
+        "Description": "愛宕商店に掛けで売り上げた商品のうち一部が破損していたため、￥1,000の値引きを受け入れた。",
         "Hint": "",
         "Commentary": "",
         "UseOffsetAnswer": false,
@@ -382,7 +382,7 @@
         ]
       },
       {
-        "Description": "得意先に掛けで売り上げた商品のうち￥1,500が品違いのため返品されてきた",
+        "Description": "野田商店に掛けで売り上げた商品のうち￥1,500が品違いのため返品されてきた",
         "Hint": "",
         "Commentary": "",
         "UseOffsetAnswer": false,
@@ -400,7 +400,7 @@
         ]
       },
       {
-        "Description": "商品￥1,000を掛けで仕入れた。引取運賃￥100を現金で支払った。当社では三分法で記帳している。",
+        "Description": "梅郷商店から商品￥1,000を掛けで仕入れた。引取運賃￥100を現金で支払った。当社では三分法で記帳している。",
         "Hint": "",
         "Commentary": "",
         "UseOffsetAnswer": false,
@@ -418,7 +418,7 @@
         ]
       },
       {
-        "Description": "仕入れた商品￥500を、不良のため返品した。商品売買は三分法による。",
+        "Description": "運河商店から仕入れた商品￥500を、不良のため返品した。商品売買は三分法による。",
         "Hint": "",
         "Commentary": "",
         "UseOffsetAnswer": false,
@@ -436,7 +436,7 @@
         ]
       },
       {
-        "Description": "B商店から商品￥50,000を仕入れ、代金のうち￥30,000はC商店振り出しの約束手形を裏書譲渡し、残額はB商店宛の約束手形を振り出した。取引は三分法による。",
+        "Description": "江戸川台商店から商品￥50,000を仕入れ、代金のうち￥30,000は初石商店振り出しの約束手形を裏書譲渡し、残額は江戸川台商店宛の約束手形を振り出した。取引は三分法による。",
         "Hint": "",
         "Commentary": "",
         "UseOffsetAnswer": false,
@@ -638,7 +638,7 @@
       {
         "Description": "6月30日、備品￥400,000（減価償却累計額￥200,000）を￥250,000で売却し、代金は現金で受け取った。決算日は3月31日。この備品は、残存価額０、耐用年数8年、定額法で減価償却している。減価償却は月割計算による。",
         "Hint": "",
-        "Commentary": "これでいいんだっけ",
+        "Commentary": "",
         "UseOffsetAnswer": false,
         "SiwakeList": [
           {
@@ -880,7 +880,7 @@
         ]
       },
       {
-        "Description": "得意先のA商店が倒産し、前年度に売り上げた同店への売掛金￥50,000が回収不能になった。ただし、貸倒引当金残高が￥10,000ある。",
+        "Description": "得意先の鷹森商店が倒産し、前年度に売り上げた同店への売掛金￥50,000が回収不能になった。ただし、貸倒引当金残高が￥10,000ある。",
         "Hint": "",
         "Commentary": "",
         "UseOffsetAnswer": false,
@@ -921,7 +921,7 @@
         ]
       },
       {
-        "Description": "B商店振り出しの約束手形￥10,000を銀行で割引き、割引料￥1,000を差し引かれた手取り金を受け取り、当座預金に預け入れた。",
+        "Description": "豊四季商店振り出しの約束手形￥10,000を銀行で割引き、割引料￥1,000を差し引かれた手取り金を受け取り、当座預金に預け入れた。",
         "Hint": "",
         "Commentary": "",
         "UseOffsetAnswer": false,
