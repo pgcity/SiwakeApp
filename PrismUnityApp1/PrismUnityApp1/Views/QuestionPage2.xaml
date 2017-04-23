@@ -27,8 +27,8 @@
                     <Frame OutlineColor="#bdbdbd" Margin="5,5,5,5">
                         <StackLayout Orientation="Vertical">
                             <Label Text="{Binding Question.Description}" TextColor="#212121"></Label>
-                            <Label Text="[解説]" TextColor="#212121" IsVisible="{Binding Confirmed}"></Label>
-                            <Label Text="{Binding Question.Commentary}" TextColor="#757575" IsVisible="{Binding Confirmed}"></Label>
+                            <Label Text="[解説]" TextColor="#212121" IsVisible="{Binding CommentaryVisible, Mode=TwoWay}"></Label>
+                            <Label Text="{Binding Question.Commentary}" TextColor="#757575" IsVisible="{Binding CommentaryVisible, Mode=TwoWay}"></Label>
                         </StackLayout>
                     </Frame>
                     <Grid>

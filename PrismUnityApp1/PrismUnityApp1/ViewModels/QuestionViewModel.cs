@@ -156,6 +156,20 @@ namespace SiwakeApp.ViewModels
             set
             {
                 this.SetProperty(ref this.confirmed, value);
+                CommentaryVisible = value && Question.Commentary.Length > 0;
+            }
+        }
+
+        private bool commentaryVisible;
+        public bool CommentaryVisible
+        {
+            get
+            {
+                return commentaryVisible;
+            }
+            set
+            {
+                this.SetProperty(ref this.commentaryVisible, value);
             }
         }
 
