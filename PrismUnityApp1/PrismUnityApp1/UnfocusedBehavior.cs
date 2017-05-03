@@ -12,14 +12,20 @@ namespace SiwakeApp
     {
         protected override void OnAttachedTo(Entry entry)
         {
-            entry.Unfocused += OnEntryTextChanged;
+            entry.Completed += OnCompleted;
             base.OnAttachedTo(entry);
         }
 
         protected override void OnDetachingFrom(Entry entry)
         {
-            entry.Unfocused -= OnEntryTextChanged;
+            entry.Completed -= OnCompleted;
             base.OnDetachingFrom(entry);
+        }
+
+        private void OnCompleted(object sender, EventArgs e)
+        {
+            var vm = (sender as Entry).BindingContext as SiwakeKamokuViewModel;
+            vm.OnTextChanged(sender, e);
         }
 
         void OnEntryTextChanged(object sender, FocusEventArgs args)
